@@ -16,9 +16,7 @@ const ImageSlider = ({ slides }) => {
     setCurrentIndex(newIndex);
   };
 
-  const goToSlide = (slideIndex) => {
-    setCurrentIndex(slideIndex);
-  };
+  
 
   return (
     <div className="slider-container">

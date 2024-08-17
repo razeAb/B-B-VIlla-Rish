@@ -3,20 +3,12 @@ import "../src/App.css";
 import ImageSlider from "./ImageSlider";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import Icon from "@mdi/react";
-import { mdiWaze } from "@mdi/js";
 import PlacesNear from "./PlacesNear";
 import RestaurantsNear from "./RestaurantsNear";
-import ReactDOM from "react-dom";
 import Icons from "./icons";
-{
-  /* <img src="/images/img51.jpeg" alt="Header Image" /> */
-}
 
 function App() {
-  const scrollArrows = document.querySelectorAll(".arrow-box span");
 
   // Add click event listeners to each <span> element
   useEffect(() => {
@@ -39,14 +31,7 @@ function App() {
     };
   }, []);
 
-  // Settings for the image slider carousel
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 4,
-  };
+  
   // Array of image slides for the slider
   const slides = [
     { src: "/images/img1.jpg" },
@@ -118,7 +103,7 @@ function App() {
     <div className="App">
       <header class="header">
         <div class="header-left">
-          <img src="/images/img51.jpeg" alt="Header Image" />
+          <img src="/images/img51.jpeg" alt="Header" />
         </div>
         <div class="header-right">
           <h1>About Us</h1>
