@@ -1,282 +1,369 @@
 /* Global styles */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
   margin: 0;
-  padding: 0;
-  font-family: "Arial", sans-serif;
+  font-family: "Inter", sans-serif;
+  background-color: #fff;
+  color: #000;
+}
+
+h1,
+h2 {
+  font-weight: bold;
+  text-align: center;
+  margin: 20px 0;
+}
+
+p {
+  line-height: 1.6;
 }
 
 /* Header styles */
-.header {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  font-size: calc(10px + 2vmin);
-  color: white;
-  background-color: black;
-}
-
-.header-left,
-.header-right {
-  width: 50%;
-}
-
-.header-left img {
-  max-width: 100%;
-  height: auto;
-}
-
-/* Arrow box styles */
-.arrow-box {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
+.booking-header {
+  padding: 4rem 2rem;
+  background-color: #ffffff;
   text-align: center;
 }
 
-.scroll-text {
-  color: white;
-  font-size: 16px;
+.booking-header input {
+  width: 100%;
+  max-width: 400px;
+}
+
+.booking-header button {
+  background-color: #bba168;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.booking-header button:hover {
+  background-color: #d4a233;
+}
+
+/* Facilities Section */
+.facilities-section {
+  position: relative;
+  text-align: center;
+  background-color: #bba168;
+  padding: 50px;
+  border-radius: 10px;
+  background-image: url(../public/images/img50.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.section-title {
+  font-size: 2rem; /* Adjust size for responsiveness */
+  font-weight: bold;
+  text-align: center;
   margin-bottom: 20px;
-  display: block;
+  color: black; /* Default black for the main text */
 }
 
-.arrow-box span {
-  display: block;
-  width: 30px;
-  height: 30px;
-  border-bottom: 1px solid #fff;
-  border-right: 1px solid #fff;
-  transform: rotate(45deg);
+.section-title span {
+  color: #bba168; /* Gold color for the highlighted part */
+}
+/* Gallery Section */
+.gallery-section {
+  padding: 50px;
+  background-color: #dedede;
+  border-radius: 10px;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Slider Container Adjustments */
+.slider-container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
-  animation: animate 2s infinite;
+  overflow: visible;
 }
 
-.arrow-box span:last-child {
-  display: none;
+/* Main Slide */
+.main-slide {
+  flex: 3;
+  position: relative;
+  height: 300px;
+  margin: 0 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.arrow-box span:nth-child(1) {
-  animation-delay: -0.2s;
+.main-slide:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
-.arrow-box span:nth-child(2) {
-  animation-delay: -0.4s;
+.main-image {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-@keyframes animate {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
+/* Side Images */
+.side-images {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
 }
 
-/* Media queries */
+.side-image {
+  width: 100px;
+  height: 80px;
+  background-position: center;
+  background-size: cover;
+  border-radius: 10px;
+  opacity: 0.7;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.side-image:hover {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+/* Arrows */
+.left-arrow {
+  position: absolute;
+  top: 50%;
+  left: 20px; /* Ensure the left arrow is on the left side */
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background-color: #ffffff;
+  color: #bba168;
+  border-radius: 50%;
+  border: 2px solid #bba168;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  font-size: 18px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+.right-arrow {
+  position: absolute;
+  top: 50%;
+  right: 20px; /* Ensure the right arrow is on the right side */
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background-color: #ffffff;
+  color: #bba168;
+  border-radius: 50%;
+  border: 2px solid #bba168;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  font-size: 18px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.left-arrow:hover,
+.right-arrow:hover {
+  background-color: #bba168;
+  color: #ffffff;
+  transform: scale(1.1);
+}
+
+.left-arrow {
+  left: -50px;
+}
+
+.right-arrow {
+  right: -50px;
+}
+
+/* Carousel Adjustments */
+.react-multi-carousel-list {
+  padding: 0 10px;
+}
+
+.react-multi-carousel-track {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+/* Card Styling */
+.card {
+  margin: 0 auto;
+  padding: 1.2rem;
+  width: 80%;
+  max-width: 280px;
+  background-color: #bba168;
+  border-radius: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.card h2 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  font-size: 0.9rem;
+  color: #f1f1f1;
+  margin-bottom: 1rem;
+}
+
+.card button {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.card button.bg-blue-500 {
+  background-color: black;
+}
+
+.card button.bg-blue-500:hover {
+  background-color: #0056b3;
+}
+
+/* Adjust the arrows for responsiveness */
+.react-multi-carousel-arrow--left {
+  left: -60px;
+}
+
+.react-multi-carousel-arrow--right {
+  right: -60px;
+}
+
+.react-multi-carousel-arrow:hover {
+  background-color: #bba168;
+  opacity: 0.8;
+}
+
+/* Things to Do */
+.things-to-do {
+  padding: 50px;
+  background-color: #fff;
+}
+
+/* Contact Section */
+.contact-section {
+  background-color: black;
+  color: white;
+  padding: 50px;
+  text-align: center;
+}
+
+/* Responsive Adjustments */
 @media only screen and (max-width: 768px) {
-  .header {
-    flex-direction: column-reverse;
-    justify-content: center;
-    text-align: center;
-    padding: 20px;
+  .gallery-section {
+    min-height: 300px;
   }
 
-  .header-left,
-  .header-right {
-    width: 100%;
+  .main-slide {
+    height: 250px;
   }
 
-  .header-left {
-    order: 2;
-    margin-bottom: 10px;
-    text-align: center;
+  .side-images {
+    gap: 10px;
   }
 
-  .header-left img {
-    display: block;
-    margin: 0 auto;
+  .side-image {
+    width: 80px;
+    height: 60px;
   }
 
-  .header-right {
-    order: 1;
+  .left-arrow {
+    left: 10px; /* Adjust for smaller screens */
   }
 
-  .icon-container {
-    width: calc(25% - 20px);
-    margin: 10px;
-  }
-
-  .icon {
-    font-size: 40px;
-    padding: 10px;
-  }
-
-  .arrow-box {
-    display: none;
+  .right-arrow {
+    right: 10px; /* Adjust for smaller screens */
   }
 }
 
 @media only screen and (max-width: 600px) {
-  .header-left,
-  .header-right {
-    width: 100%;
+  .gallery-section {
+    min-height: 250px;
   }
 
-  .icon-container {
-    width: calc(33.33% - 20px); /* Display 3 icons in each row on 600px screen */
-    margin: 10px;
+  .main-slide {
+    height: 200px;
+  }
+
+  .side-images {
+    gap: 8px;
+  }
+
+  .side-image {
+    width: 70px;
+    height: 50px;
+  }
+
+  .left-arrow,
+  .right-arrow {
+    width: 30px;
+    height: 30px;
+    left: -30px;
+    right: -30px;
   }
 }
 
 @media only screen and (max-width: 480px) {
-  .header {
-    padding: 20px;
+  .gallery-section {
+    min-height: 200px;
   }
 
-  .header-left,
-  .header-right {
-    width: 100%;
+  .main-slide {
+    height: 150px;
   }
 
-  .icon-container {
-    width: calc(50% - 20px); /* Display 2 icons in each row on 480px screen */
-    margin: 10px;
+  .side-images {
+    gap: 5px;
   }
 
-  .icon {
-    font-size: 30px; /* Reduce font size for smaller screens */
+  .side-image {
+    width: 60px;
+    height: 45px;
   }
 
-  .arrow-box {
-    display: none;
+  .left-arrow {
+    left: 5px; /* Tighter spacing for very small screens */
+    margin-right: 100px;
   }
-}
-
-/* Additional styles */
-.App {
-  text-align: center;
-  background-color: #fff;
-}
-
-.App-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-}
-
-.main-content {
-  background-color: #fff;
-  padding: 20px;
-}
-
-.pointer {
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  background-color: #ddd;
-  margin: 0 5px;
-  cursor: pointer;
-}
-
-.pointer.active {
-  background-color: #555;
-}
-
-footer {
-  background-color: #282c34;
-  color: white;
-  padding: 10px;
-  text-align: center;
-}
-
-.slick-slide > div {
-  margin: 0 10px;
-}
-
-.product--image {
-  width: 100%;
-  height: 16em;
-  object-fit: cover;
-}
-
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 320px;
-  height: 400px;
-  margin: auto 1rem;
-  text-align: center;
-  font-family: Arial, sans-serif;
-}
-
-.navigation {
-  color: grey;
-  font-size: 22px;
-}
-
-.card button {
-  border: none;
-  outline: 0;
-  padding: 12px;
-  color: white;
-  background-color: lightskyblue;
-  text-align: center;
-  cursor: pointer;
-  width: 100%;
-  font-size: 18px;
-}
-
-.card button:hover {
-  opacity: 0.7;
-}
-
-.card {
-  display: inline-block;
-  margin: 10px;
-}
-
-.container1 {
-  background-color: white;
-  padding: 20px;
-}
-
-.icons-row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.icon-container {
-  text-align: center;
-  margin: 10px;
-  border: 1px solid black;
-  padding: 5px;
-  width: calc(25% - 20px); /* Display 4 icons in each row on 768px and larger screens */
-}
-
-.icon {
-  font-size: 50px;
-  margin-bottom: 5px;
-  border: 0.5px solid black; /* Slimmer border for PC version */
-  padding: 5px;
-  border-radius: 10px;
-}
-
-.icon-container p {
-  font-size: 14px;
-  margin-bottom: 0;
-}
-
-/* Additional styles for PC version */
-@media only screen and (min-width: 769px) {
-  .icon-container {
-    width: calc(13% - 20px); /* Display 4 icons in each row on PC */
-    margin: 10px;
+  .right-arrow {
+    right: 5px; /* Tighter spacing for very small screens */
+    margin-left: 350px;
   }
 }
