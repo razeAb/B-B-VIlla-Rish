@@ -47,12 +47,12 @@ p {
   position: relative;
   text-align: center;
   background-color: #bba168;
-  padding: 50px;
+  padding: 500px;
   border-radius: 10px;
   background-image: url(../public/images/img50.jpg);
   background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  background-size: cover; /* Ensures the image covers the entire section */
+  background-position: center; /* Centers the image */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -93,7 +93,7 @@ p {
 .main-slide {
   flex: 3;
   position: relative;
-  height: 300px;
+  height: 400px;
   margin: 0 20px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -287,6 +287,23 @@ p {
 
 /* Responsive Adjustments */
 @media only screen and (max-width: 768px) {
+  .card {
+    width: 100%;
+    max-width: 220px; /* Smaller width for tablets */
+    padding: 1rem; /* Reduce padding */
+  }
+
+  .card img {
+    height: 120px; /* Reduce image height */
+  }
+
+  .card h2 {
+    font-size: 1rem; /* Smaller font size */
+  }
+
+  .card p {
+    font-size: 0.8rem; /* Smaller text */
+  }
   .gallery-section {
     min-height: 300px;
   }
@@ -311,15 +328,20 @@ p {
   .right-arrow {
     right: 10px; /* Adjust for smaller screens */
   }
+  .facilities-section {
+    padding: 200px; /* Reduce padding for smaller screens */
+    background-position: top center; /* Align image at the top */
+  }
 }
+
 
 @media only screen and (max-width: 600px) {
   .gallery-section {
-    min-height: 250px;
+    min-height: 400px;
   }
 
   .main-slide {
-    height: 200px;
+    height: 400px;
   }
 
   .side-images {
@@ -327,7 +349,7 @@ p {
   }
 
   .side-image {
-    width: 70px;
+    width: 100px;
     height: 50px;
   }
 
@@ -341,12 +363,29 @@ p {
 }
 
 @media only screen and (max-width: 480px) {
+  card {
+    width: 90%; /* Take up more width on smaller phones */
+    max-width: 180px; /* Smaller cards for phones */
+    padding: 0.8rem; /* Further reduce padding */
+  }
+
+  .card img {
+    height: 80px; /* Smaller image */
+  }
+
+  .card h2 {
+    font-size: 0.9rem; /* Smaller font size */
+  }
+
+  .card p {
+    font-size: 0.7rem; /* Smaller text */
+  }
   .gallery-section {
     min-height: 200px;
   }
 
   .main-slide {
-    height: 150px;
+    height: 300px;
   }
 
   .side-images {

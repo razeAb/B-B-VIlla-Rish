@@ -89,25 +89,17 @@ function App() {
         </div>
       </header>
       <main>
-        <section className="facilities-section bg-[#bba168] py-16 text-white">
-          <div className="flex justify-start items-center flex-col md:flex-row">
-            <div className="w-full md:w-auto text-left ml-16">
-              <h2 className="text-4xl font-bold mb-8">מתקנים</h2>
-              <div className="bg-black text-white p-6 rounded-lg w-80 shadow-lg">
-                <ul className="space-y-4">
-                  <li>חדרים ללא עישון</li>
-                  <li>חניה חינם</li>
-                  <li>בית פרטי</li>
-                  <li>בריכת שחייה חיצונית</li>
-                  <li>Wi-Fi חינם</li>
-                  <li>בריכה מחוממת</li>
-                  <li>טעינת רכב חשמלי</li>
-                  <li>ג'קוזי</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
+      <section className="facilities-section bg-[#bba168] py-16 text-white">
+  <div className="flex justify-center items-center flex-col md:flex-row">
+    <div className="w-full md:w-auto text-left ml-16">
+      {/* Image element (replace with your actual image source) */}
+      <div className="rounded-lg w-80 shadow-lg">
+        
+      </div>
+    </div>
+  </div>
+</section>
+
 
         {/* גלריה */}
         <section className="gallery-section py-16">
