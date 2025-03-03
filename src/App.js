@@ -11,6 +11,7 @@ import Icons from "./icons";
 import Header from "./Header"; // ייבוא כותרת
 import Footer from "./Footer"; // ייבוא תחתית עמוד
 import BookingLinks from "./BookingLinks"; // ייבוא קישורי הזמנה
+import googleMaps from "./googleMaps";
 
 function App() {
   const slides = [
