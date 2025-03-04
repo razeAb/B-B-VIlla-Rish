@@ -118,7 +118,7 @@ function App() {
         </section>
         {/* {google maps} */}
         <section className="py-16 ">
-          <h2 className="text-4xl font-bold text-center mb-12 ">גלריה</h2>
+          <h2 className="text-4xl font-bold text-center mb-12 ">מפה</h2>
           <div className="container mx-auto">
             <GoogleMaps />
           </div>

@@ -55,7 +55,7 @@ function GoogleMaps() {
             style={{
               padding: "10px 20px",
               margin: "5px",
-              background: "#4285F4",
+              background: "black",
               color: "white",
               border: "none",
               borderRadius: "5px",
@@ -70,7 +70,7 @@ function GoogleMaps() {
             style={{
               padding: "10px 20px",
               margin: "5px",
-              background: "#00AEEF",
+              background: "black",
               color: "white",
               border: "none",
               borderRadius: "5px",
