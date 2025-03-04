@@ -11,7 +11,7 @@ import Icons from "./icons";
 import Header from "./Header"; // ייבוא כותרת
 import Footer from "./Footer"; // ייבוא תחתית עמוד
 import BookingLinks from "./BookingLinks"; // ייבוא קישורי הזמנה
-import googleMaps from "./googleMaps";
+import GoogleMaps from "./GoogleMapsTemp";
 
 function App() {
   const slides = [
@@ -116,7 +116,13 @@ function App() {
             <ImageSlider slides={slides} />
           </div>
         </section>
-
+        {/* {google maps} */}
+        <section className="py-16 ">
+          <h2 className="text-4xl font-bold text-center mb-12 ">גלריה</h2>
+          <div className="container mx-auto">
+            <GoogleMaps />
+          </div>
+        </section>
         {/* דברים לעשות */}
         <section className="things-to-do py-16 bg-white">
           <h2 className="section-title">

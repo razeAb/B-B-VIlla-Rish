@@ -15,32 +15,7 @@ const Header = () => {
 </div>
 
         {/* Navigation Links */}
-        <nav className="hidden md:flex space-x-8 text-sm font-medium">
-          <a
-            href="#home"
-            className="hover:text-[#bba168] pb-1 border-b-2 border-transparent hover:border-[#bba168] transition duration-300"
-          >
-            Home
-          </a>
-          <a
-            href="#about"
-            className="hover:text-[#bba168] pb-1 border-b-2 border-transparent hover:border-[#bba168] transition duration-300"
-          >
-            About Us
-          </a>
-          <a
-            href="#facilities"
-            className="hover:text-[#bba168] pb-1 border-b-2 border-transparent hover:border-[#bba168] transition duration-300"
-          >
-            Facilities
-          </a>
-          <a
-            href="#booking"
-            className="hover:text-[#bba168] pb-1 border-b-2 border-transparent hover:border-[#bba168] transition duration-300"
-          >
-            Booking
-          </a>
-        </nav>
+     
 
         {/* Contact Us Button */}
         <a href="#contact" className="bg-[#bba168] text-black px-6 py-2 rounded-md text-sm font-bold hover:bg-yellow-600 transition">
