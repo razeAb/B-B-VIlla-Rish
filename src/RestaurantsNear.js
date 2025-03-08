@@ -30,43 +30,50 @@ const RestaurantsNear = () => {
       id: 1,
       image: "https://static.wixstatic.com/media/d5f6aa_122238a3853c44fe938ecc1d38f24a0d~mv2.jpg/v1/fill/w_661,h_440,al_c,q_90,usm_0.66_1.00_0.01/d5f6aa_122238a3853c44fe938ecc1d38f24a0d~mv2.webp",
       title: "honey sweets",
-      description: "small coffee shop that serves middle eastern sweets",
+      description: "בית קפה קנאפה ומיתוקים",
       wazeLink: "https://waze.com/ul?q=32.95291096229205,35.20213960185384&navigate=yes"
     },
     {
       id: 2,
       image: "https://images.rest.co.il/Customers/80236368/d66b0a6d92ca4528a1e30d718a2dfe1e_14.jpg",
-      title: "pizza pala",
-      description: "italian style restaurant",
+      title: "פיצה פאלה",
+      description: "מסעדה איטלקית ופיצות כולל משלוחים",
       wazeLink: "https://waze.com/ul?q=32.95414583033369,35.18732954418131&navigate=yes"
     },
     {
       id: 3,
       image: "https://img.restaurantguru.com/w550/h367/r292-Good-Morning-Restaurant-food-2021-09-1.jpg",
-      title: "good morning restaurant",
-      description: "a middle eastern breakfast restaurant",
+      title: "מסעדת בוקר טוב",
+      description: "מסעדת חומוס",
       wazeLink: "https://waze.com/ul?q=32.945951571266406,35.17028264232862&navigate=yes"
     },
     {
       id: 4,
-      image: "https://media.easy.co.il/images/UserThumbs/26545502_1590863622407.jpg",
-      title: "la dolce vita",
-      description: "dessert and coffee place",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEdRMy6gc9l9KFxFu3Z1BL3Ji_4wdrKxoaRQ&s",
+      title: "לה מינור",
+      description: "מסעדה אוכל בסנון כפרי",
       wazeLink: "https://waze.com/ul?q=32.9563686398241,35.182972601849805&navigate=yes"
     },
     {
       id: 5,
       image: "https://img.restaurantguru.com/c829-Restaurant-Tabun-square-pulled-pork-sandwich.jpg",
-      title: "tabun square",
-      description: "druze tabun food",
+      title: "טאבון הכיכר",
+      description: "מבחר פיתות וסמבוסקים בטעמים שונים",
       wazeLink: "https://waze.com/ul?q=32.95354146899507,35.198721357671374&navigate=yes"
     },
     {
       id: 6,
       image: "https://www.kitchensanctuary.com/wp-content/uploads/2015/02/Chicken-Shawarma-square-FS-57.jpg",
-      title: "shawarma abu ali",
-      description: "famous shawarma place in the village",
+      title: "שווארמה אבו עלי",
+      description: "שווארמה ברמה אחרת 30 שנות מצוינות",
       wazeLink: "https://waze.com/ul?q=32.953136325663245,35.19933633498597&navigate=yes"
+    },
+    {
+      id: 7,
+      image: "https://www.b144.co.il/_next/image/?url=https%3A%2F%2Fservices.b144.co.il%2FUtils%2FDynamicMediaHandler.ashx%3Ffilepath%3Ddynamic_img%2Fcategories%2Fdefaults%2Fcp_bakery_m1.jpg&w=1200&q=75",
+      title: "מאפיית אלעין",
+      description: "מאפיים והכנת בצקים בטאבון מדי בוקר",
+      wazeLink: "https://waze.com/ul?q=32.95906494672141, 35.2172964122542&navigate=yes"
     }
   ];
 

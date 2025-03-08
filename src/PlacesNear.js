@@ -29,36 +29,36 @@ const PlacesNear = () => {
     {
       id: 1,
       image: "/images/supermarket.jpeg",
-      title: "liquor store open 24/7",
-      description: "also open for delivery call number +972507203099",
+      title: "קיוסק 24/7",
+      description: "פתוח למשלוחים למספר +972507203099",
       wazeLink: "https://waze.com/ul?q=32.95520970521225,35.21344186558524&navigate=yes",
     },
     {
       id: 2,
       image: "https://media-cdn.tripadvisor.com/media/photo-s/1b/0f/e0/7c/caption.jpg",
-      title: "kids airport",
-      description: "Amusement & Theme Parks",
+      title: "מיי בייבי",
+      description: "מתחם קניות למוצרי ילדים ופארק שעשועים",
       wazeLink: "https://waze.com/ul?q=32.94695422585931,35.17259178272374&navigate=yes",
     },
     {
       id: 3,
       image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0c/dc/78/37/getlstd-property-photo.jpg?w=1200&h=-1&s=1",
-      title: "kishor winery",
-      description: "Nestled in the hills of western galilee lies the Kishor vineyard...",
+      title: "יקב כישור",
+      description: "יקב כישור שבו עובדים אנשים עם צרכים מיוחדים",
       wazeLink: "https://waze.com/ul?q=32.94403000367458,35.24948272572598&navigate=yes",
     },
     {
       id: 4,
       image: "https://media-cdn.tripadvisor.com/media/photo-s/1b/c8/12/ca/caption.jpg",
-      title: "Nof HaVradim Razors",
-      description: "Self-driving RZR tours and jeep tours in the Galilees secret and spectaculer jungles...",
+      title: "טרקטורטני נוף הוורדים",
+      description: "טיולי ריזירים בטבע",
       wazeLink: "https://waze.com/ul?q=32.995529647997266,35.26907034772502&navigate=yes",
     },
     {
       id: 5,
       image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/4f/e0/12/one-of-the-small-fountains.jpg?w=1200&h=-1&s=1",
-      title: "Al- Muna Gardens",
-      description: "beautiful natural gardens to go and explore",
+      title: "גני אל מונה",
+      description: "גנים מופלאים לטיול רגלי ולקחת תמונות מרהיבות",
       wazeLink: "https://waze.com/ul?q=32.94810871236614,35.18172426841962&navigate=yes",
     },
     {
@@ -66,8 +66,24 @@ const PlacesNear = () => {
       image:
         "https://bigcenters.co.il/wp-content/uploads/elementor/thumbs/%D7%99%D7%A8%D7%9B%D7%90-%D7%A4%D7%A8%D7%95%D7%A4%D7%99%D7%9C-scaled-ptafdnuhtz9ewvefe728ts4cipizrmz5o5jm0sm7i0.jpg",
       title: "BIG Fashion Outlet",
-      description: "outlet clothing brands shop",
+      description: "מרכז קניות גדול עם מציאות של מותגים",
       wazeLink: "https://waze.com/ul?q=32.95632556906892,35.18324377116409&navigate=yes",
+    },
+    {
+      id: 7,
+      image:
+        "https://inature.info/w/images/thumb/4/4a/%D7%A2%D7%99%D7%9F_%D7%99%D7%A4%D7%A2%D7%9D1.jpg/320px-%D7%A2%D7%99%D7%9F_%D7%99%D7%A4%D7%A2%D7%9D1.jpg",
+      title: "מסלול ואדי עין אל מגנונה",
+      description: "מעיין השוכן בלב הטבע עם זרימת מים מדהימה בימי חורף",
+      wazeLink: "https://waze.com/ul?q=32.96168788287706, 35.22795708656132&navigate=yes",
+    },
+    {
+      id: 8,
+      image:
+        "https://inature.info/w/images/thumb/4/4a/%D7%A2%D7%99%D7%9F_%D7%99%D7%A4%D7%A2%D7%9D1.jpg/320px-%D7%A2%D7%99%D7%9F_%D7%99%D7%A4%D7%A2%D7%9D1.jpg",
+      title: "סופר מרקט אלרים",
+      description: "סופרמרקט גדול עם כל המצרכים",
+      wazeLink: "https://waze.com/ul?q=32.95507778497727, 35.21949617789516&navigate=yes",
     },
   ];
 

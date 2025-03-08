@@ -62,7 +62,7 @@ function GoogleMaps() {
               cursor: "pointer",
             }}
           >
-            Open in Google Maps
+            google maps ניווט דרך
           </button>
         </a>
         <a id="wazeLink" target="_blank" rel="noopener noreferrer">
@@ -77,7 +77,7 @@ function GoogleMaps() {
               cursor: "pointer",
             }}
           >
-            Open in Waze
+            waze ניווט דרך
           </button>
         </a>
       </div>
