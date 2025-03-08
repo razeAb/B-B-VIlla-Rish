@@ -93,7 +93,7 @@ function App() {
           <div className="flex justify-start items-center flex-col md:flex-row">
             <div className="w-full md:w-auto text-left ml-16">
               <h2 className="text-4xl font-bold mb-8">מתקנים</h2>
-              <div className="bg-black text-white p-6 rounded-lg w-80 shadow-lg">
+              <div className="bg-[#0c6dea] text-white p-6 rounded-lg w-80 shadow-lg">
                 <ul className="space-y-4">
                   <li>חדרים ללא עישון</li>
                   <li>חניה חינם</li>
