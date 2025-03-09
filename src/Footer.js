@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="contact-section bg-black text-white py-12">
+    <footer id="footer" className="contact-section bg-black text-white py-12">
       {/* אזור יצירת קשר */}
       <div className="text-center">
         <h2 className="text-4xl font-bold mb-4">צרו קשר</h2>

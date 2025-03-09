@@ -79,8 +79,7 @@ const PlacesNear = () => {
     },
     {
       id: 8,
-      image:
-        "https://inature.info/w/images/thumb/4/4a/%D7%A2%D7%99%D7%9F_%D7%99%D7%A4%D7%A2%D7%9D1.jpg/320px-%D7%A2%D7%99%D7%9F_%D7%99%D7%A4%D7%A2%D7%9D1.jpg",
+      image: "../images/supermarket2.jpeg",
       title: "סופר מרקט אלרים",
       description: "סופרמרקט גדול עם כל המצרכים",
       wazeLink: "https://waze.com/ul?q=32.95507778497727, 35.21949617789516&navigate=yes",
