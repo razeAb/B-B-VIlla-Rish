@@ -12,6 +12,7 @@ import Header from "./Header"; // ייבוא כותרת
 import Footer from "./Footer"; // ייבוא תחתית עמוד
 import BookingLinks from "./BookingLinks"; // ייבוא קישורי הזמנה
 import GoogleMaps from "./GoogleMapsTemp";
+import Footer2 from "./Footer2";
 
 function App() {
   const slides = [
@@ -93,7 +94,9 @@ function App() {
           <div className="flex justify-start items-center flex-col md:flex-row">
             <div className="w-full md:w-auto text-right ml-16">
               <div className="bg-[#bba168] text-white p-6 rounded-lg w-80 shadow-lg">
-              <h2 className="text-2xl font-bold mb-8 bg-black text-white px-4 py-2 rounded-md font-bold  flex items-center justify-center">מתקנים</h2>
+                <h2 className="text-2xl font-bold mb-8 bg-black text-white px-4 py-2 rounded-md font-bold  flex items-center justify-center">
+                  מתקנים
+                </h2>
 
                 <ul className="space-y-4" dir="rtl">
                   <li>בריכה מחוממת</li>
@@ -145,6 +148,7 @@ function App() {
       </main>
       <Footer />
       <BookingLinks />
+      <Footer2 />
     </div>
   );
 }
