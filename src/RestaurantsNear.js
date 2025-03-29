@@ -79,7 +79,7 @@ const RestaurantsNear = () => {
     },
     {
       id: 8,
-      image: "public/images/sweets.jpeg",
+      image: "./images/sweets.jpeg",
       title: " ממתקי תמיר",
       description: "     מבחר של מתוקים",
       wazeLink: "https://waze.com/ul?q=32.95444761533457, 35.2155750828109&navigate=yes",
