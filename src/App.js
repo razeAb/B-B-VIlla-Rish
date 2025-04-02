@@ -66,7 +66,7 @@ function App() {
     <div className="App">
       <Header />
       <header className="booking-header text-right py-16 bg-white" dir="rtl">
-        <h1 className="text-5xl font-extrabold mb-6"> בואו להזמין חופשה בלתי נשכחת </h1>
+        <h1 className="text-5xl font-extrabold mb-6"> וילה ריש - חופשה של התחדשות המעניקה שלווה אמיתית </h1>
         <p className="text-gray-700 text-lg max-w-3xl mx-auto leading-relaxed">
           Villa Rish - פאר, יוקרה, ושלווה,
           <br></br>

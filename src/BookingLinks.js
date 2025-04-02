@@ -23,23 +23,7 @@ const BookingLinks = () => {
           rel="noopener noreferrer"
           className="transition-transform transform hover:scale-110"
         >
-          <img
-            src="https://www.weekend.co.il/images/logo_transperant.svg"
-            alt="לוגו Weekend"
-            className="w-24 h-24 object-contain"
-          />
-        </a>
-        <a
-          href="https://www.vila4u.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="transition-transform transform hover:scale-110"
-        >
-          <img
-            src="https://www.vila4u.com/webimages/minilogo3.png"
-            alt="לוגו Vila4U"
-            className="w-24 h-24 object-contain"
-          />
+          <img src="https://www.weekend.co.il/images/logo_transperant.svg" alt="לוגו Weekend" className="w-24 h-24 object-contain" />
         </a>
         {/* <a
           href="https://www.vii.co.il/"

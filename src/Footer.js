@@ -37,6 +37,18 @@ const Footer = () => {
           >
             <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="לוגו Instagram" className="w-12 h-12" />
           </a>
+          <a
+            href="https://www.facebook.com/share/1AbQccujje/" // Replace with your actual Facebook page URL
+            target="_blank"
+            rel="noopener noreferrer"
+            className="transition-transform transform hover:scale-110"
+          >
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg"
+              alt="לוגו Facebook"
+              className="w-12 h-12"
+            />
+          </a>
         </div>
       </div>
     </footer>

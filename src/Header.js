@@ -17,7 +17,11 @@ const Header = () => {
         {/* Navigation Links */}
 
         {/* Contact Us Button */}
-        <a href="#footer" className="bg-[#bba168] text-black px-6 py-2 rounded-md text-sm font-bold hover:bg-yellow-600 transition">
+        <a
+          href="https://app.b-on.co.il/online/order-v2/Rish"
+          target="_blank"
+          className="bg-[#bba168] text-black px-6 py-2 rounded-md text-sm font-bold hover:bg-yellow-600 transition"
+        >
           להזמנת מקום
         </a>
       </div>

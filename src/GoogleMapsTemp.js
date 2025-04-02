@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 function GoogleMaps() {
   useEffect(() => {
     const googleMapsApiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
-
+    console.log("API Key:", process.env.REACT_APP_GOOGLE_MAPS_API_KEY);
     // Check if Google Maps API is already loaded
     if (!window.google) {
       const script = document.createElement("script");
