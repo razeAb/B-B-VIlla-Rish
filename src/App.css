@@ -366,4 +366,10 @@ p {
     right: 5px; /* Tighter spacing for very small screens */
     margin-left: 350px;
   }
+
+  @media (max-width: 640px) {
+    .header {
+      font-size: 1.75rem; /* Equivalent to text-2xl */
+    }
+  }
 }

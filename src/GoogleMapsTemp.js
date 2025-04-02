@@ -3,26 +3,9 @@ import React, { useEffect } from "react";
 function GoogleMaps() {
   useEffect(() => {
     const googleMapsApiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
-    // Check if Google Maps API is already loaded
-    if (!window.google) {
-      const script = document.createElement("script");
-      script.src = `https://maps.googleapis.com/maps/api/js?key=${googleMapsApiKey}&callback=initMap`;
-      script.async = true;
-      script.defer = true;
-      document.head.appendChild(script);
 
-      script.onload = () => {
-        initMap();
-      };
-
-      return () => {
-        document.head.removeChild(script); // Cleanup to avoid duplicate scripts
-      };
-    } else {
-      initMap();
-    }
-
-    function initMap() {
+    // Attach initMap to the global window object
+    window.initMap = function () {
       if (!window.google) {
         console.error("Google Maps API is not loaded.");
         return;
@@ -42,6 +25,22 @@ function GoogleMaps() {
 
       document.getElementById("googleMapsLink").href = `https://www.google.com/maps/dir/?api=1&destination=${location.lat},${location.lng}`;
       document.getElementById("wazeLink").href = `https://waze.com/ul?ll=${location.lat},${location.lng}&navigate=yes`;
+    };
+
+    // Only load script if Google Maps isn't already loaded
+    if (!window.google) {
+      const script = document.createElement("script");
+      script.src = `https://maps.googleapis.com/maps/api/js?key=${googleMapsApiKey}&callback=initMap`;
+      script.async = true;
+      script.defer = true;
+      document.head.appendChild(script);
+
+      return () => {
+        document.head.removeChild(script); // Clean up
+        delete window.initMap; // Clean up global
+      };
+    } else {
+      window.initMap();
     }
   }, []);
 
@@ -61,7 +60,7 @@ function GoogleMaps() {
               cursor: "pointer",
             }}
           >
-            google maps ניווט דרך
+            ניווט דרך Google Maps
           </button>
         </a>
         <a id="wazeLink" target="_blank" rel="noopener noreferrer">
@@ -76,7 +75,7 @@ function GoogleMaps() {
               cursor: "pointer",
             }}
           >
-            waze ניווט דרך
+            ניווט דרך Waze
           </button>
         </a>
       </div>
