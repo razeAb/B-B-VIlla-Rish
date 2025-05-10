@@ -115,9 +115,9 @@ function App() {
         </section>
 
         {/* גלריה */}
-        <section className="gallery-section py-16">
+        <section className="gallery-section py-24">
           <h2 className="text-4xl font-bold text-center mb-12">גלריה</h2>
-          <div className="container mx-auto">
+          <div className="container mx-auto max-w-screen-xl">
             <ImageSlider slides={slides} />
           </div>
         </section>
