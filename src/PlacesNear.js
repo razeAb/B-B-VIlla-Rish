@@ -89,10 +89,19 @@ const PlacesNear = () => {
   return (
     <Carousel responsive={responsive}>
       {places.map((place) => (
-        <div key={place.id} className="card bg-[#bba168] text-white p-6 rounded-lg shadow-lg">
-          <img src={place.image} alt={place.title} className="product--image w-full h-40 rounded-lg object-cover mb-4" />
+        <div
+          key={place.id}
+          className="card bg-[#bba168] text-white p-6 rounded-lg shadow-lg flex flex-col justify-between w-[280px] h-[460px] sm:w-[300px] sm:h-[480px] md:w-[300px] md:h-[460px]"
+>
+          <img
+            src={place.image}
+            alt={place.title}
+            className="w-full h-[150px] object-cover rounded-[10px] mb-4"
+          />
+  
           <h2 className="text-lg font-bold mb-2">{place.title}</h2>
-          <p className="text-sm mb-4">{place.description}</p>
+          <p className="text-sm mb-4 line-clamp-2">{place.description}</p>
+  
           <button
             onClick={() => window.open(place.wazeLink, "_blank")}
             className="bg-blue-500 text-white px-4 py-2 rounded-md font-bold hover:bg-blue-600 flex items-center justify-center"
