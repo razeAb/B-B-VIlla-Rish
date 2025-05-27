@@ -17,7 +17,6 @@ import Footer2 from "./Footer2";
 function App() {
   const slides = [
     { src: "/images/img1.jpg" },
-    { src: "/images/img2.jpg" },
     { src: "/images/img3.jpg" },
     { src: "/images/img4.jpg" },
     { src: "/images/img5.jpg" },
@@ -56,10 +55,11 @@ function App() {
     { src: "/images/img40.jpg" },
     { src: "/images/img42.jpg" },
     { src: "/images/img43.jpg" },
-    { src: "/images/img44.jpg" },
-    { src: "/images/img45.jpg" },
     { src: "/images/img46.jpg" },
     { src: "/images/img49.jpg" },
+    { src: "/images/garden1.jpeg" },
+    { src: "/images/garden2.jpeg" },
+    { src: "/images/garden3.jpeg" },
   ];
 
   return (
