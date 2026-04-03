@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-import { BrowserRouter as Router, Route, Routes, useNavigate } from "react-router-dom";
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "../src/App.css";
 import ImageSlider from "./ImageSlider";
 import "slick-carousel/slick/slick.css";
@@ -13,6 +13,7 @@ import Footer from "./Footer"; // ייבוא תחתית עמוד
 import BookingLinks from "./BookingLinks"; // ייבוא קישורי הזמנה
 import GoogleMaps from "./GoogleMapsTemp";
 import Footer2 from "./Footer2";
+import ImageManager from "./ImageManager";
 
 function App() {
   const slides = [
@@ -63,7 +64,7 @@ function App() {
     { src: "/images/garden3.jpeg" },
   ];
 
-  return (
+  const Home = () => (
     <div className="App">
       <Header />
       <header className="booking-header text-right py-16 bg-white" dir="rtl">
@@ -164,6 +165,15 @@ function App() {
       <BookingLinks />
       <Footer2 />
     </div>
+  );
+
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/manage-images" element={<ImageManager />} />
+      </Routes>
+    </Router>
   );
 }
 
