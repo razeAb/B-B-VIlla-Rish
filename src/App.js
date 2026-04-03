@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "../src/App.css";
 import ImageSlider from "./ImageSlider";
@@ -14,55 +14,28 @@ import BookingLinks from "./BookingLinks"; // ייבוא קישורי הזמנה
 import GoogleMaps from "./GoogleMapsTemp";
 import Footer2 from "./Footer2";
 import ImageManager from "./ImageManager";
+import baseSlides from "./slidesData";
+import {
+  buildCarouselSlides,
+  IMAGES_UPDATED_EVENT,
+  readAddedImages,
+  readDeletedImages,
+} from "./imageStorage";
 
 function App() {
-  const slides = [
-    { src: "/images/img1.jpg" },
-    { src: "/images/img3.jpg" },
-    { src: "/images/img4.jpg" },
-    { src: "/images/img5.jpg" },
-    { src: "/images/img6.jpeg" },
-    { src: "/images/img8.jpeg" },
-    { src: "/images/img9.jpg" },
-    { src: "/images/DSC_6810.jpg" },
-    { src: "/images/DSC_6815.jpg" },
-    { src: "/images/DSC_6821.jpg" },
-    { src: "/images/DSC_6823.jpg" },
-    { src: "/images/DSC_6844 (1).jpg" },
-    { src: "/images/img13.jpeg" },
-    { src: "/images/img14.jpg" },
-    { src: "/images/img15.jpg" },
-    { src: "/images/img16.jpg" },
-    { src: "/images/img17.jpeg" },
-    { src: "/images/img18.jpg" },
-    { src: "/images/img19.jpg" },
-    { src: "/images/img20.jpg" },
-    { src: "/images/img22.jpg" },
-    { src: "/images/img23.jpg" },
-    { src: "/images/img24.jpg" },
-    { src: "/images/img25.jpg" },
-    { src: "/images/img26.jpg" },
-    { src: "/images/img27.jpg" },
-    { src: "/images/img28.jpg" },
-    { src: "/images/img29.jpg" },
-    { src: "/images/img30.jpg" },
-    { src: "/images/img31.jpeg" },
-    { src: "/images/img32.jpg" },
-    { src: "/images/img34.jpg" },
-    { src: "/images/img35.jpg" },
-    { src: "/images/img36.jpg" },
-    { src: "/images/img37.jpg" },
-    { src: "/images/img38.jpg" },
-    { src: "/images/img39.jpg" },
-    { src: "/images/img40.jpg" },
-    { src: "/images/img42.jpg" },
-    { src: "/images/img43.jpg" },
-    { src: "/images/img46.jpg" },
-    { src: "/images/img49.jpg" },
-    { src: "/images/garden1.jpeg" },
-    { src: "/images/garden2.jpeg" },
-    { src: "/images/garden3.jpeg" },
-  ];
+  const [slides, setSlides] = useState(baseSlides);
+
+  useEffect(() => {
+    const syncSlides = () => {
+      const added = readAddedImages();
+      const deleted = readDeletedImages();
+      setSlides(buildCarouselSlides(baseSlides, added, deleted));
+    };
+
+    syncSlides();
+    window.addEventListener(IMAGES_UPDATED_EVENT, syncSlides);
+    return () => window.removeEventListener(IMAGES_UPDATED_EVENT, syncSlides);
+  }, []);
 
   const Home = () => (
     <div className="App">

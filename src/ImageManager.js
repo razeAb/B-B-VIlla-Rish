@@ -1,31 +1,33 @@
 import React, { useEffect, useMemo, useState } from "react";
 import Header from "./Header";
-
-const STORAGE_KEY = "villa_rish_uploaded_images";
-
-const readStoredImages = () => {
-  try {
-    const raw = localStorage.getItem(STORAGE_KEY);
-    if (!raw) return [];
-    const parsed = JSON.parse(raw);
-    return Array.isArray(parsed) ? parsed : [];
-  } catch {
-    return [];
-  }
-};
+import baseSlides from "./slidesData";
+import {
+  notifyImagesUpdated,
+  readAddedImages,
+  readDeletedImages,
+  saveAddedImages,
+  saveDeletedImages,
+} from "./imageStorage";
 
 const ImageManager = () => {
-  const [images, setImages] = useState([]);
+  const [uploads, setUploads] = useState([]);
+  const [hiddenSlides, setHiddenSlides] = useState([]);
 
   useEffect(() => {
-    setImages(readStoredImages());
+    setUploads(readAddedImages());
+    setHiddenSlides(readDeletedImages());
   }, []);
 
   useEffect(() => {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(images));
-  }, [images]);
+    saveAddedImages(uploads);
+    saveDeletedImages(hiddenSlides);
+    notifyImagesUpdated();
+  }, [uploads, hiddenSlides]);
 
-  const totalCount = useMemo(() => images.length, [images.length]);
+  const totalCount = useMemo(
+    () => baseSlides.length + uploads.length - hiddenSlides.length,
+    [uploads.length, hiddenSlides.length]
+  );
 
   const handleUpload = async (event) => {
     const files = Array.from(event.target.files || []);
@@ -48,13 +50,24 @@ const ImageManager = () => {
       )
     );
 
-    setImages((prev) => [...uploads, ...prev]);
+    setUploads((prev) => [...uploads, ...prev]);
     event.target.value = "";
   };
 
-  const handleDelete = (id) => {
-    setImages((prev) => prev.filter((image) => image.id !== id));
+  const handleDeleteUpload = (id) => {
+    setUploads((prev) => prev.filter((image) => image.id !== id));
   };
+
+  const handleHideSlide = (src) => {
+    setHiddenSlides((prev) => (prev.includes(src) ? prev : [...prev, src]));
+  };
+
+  const handleRestoreSlide = (src) => {
+    setHiddenSlides((prev) => prev.filter((item) => item !== src));
+  };
+
+  const visibleSlides = baseSlides.filter((slide) => !hiddenSlides.includes(slide.src));
+  const hiddenSlidesList = baseSlides.filter((slide) => hiddenSlides.includes(slide.src));
 
   return (
     <div className="min-h-screen bg-white">
@@ -63,7 +76,7 @@ const ImageManager = () => {
         <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <div>
             <h1 className="text-3xl font-bold">Image Manager</h1>
-            <p className="text-gray-600 mt-1">Upload, view, and delete images.</p>
+            <p className="text-gray-600 mt-1">Manage carousel images and uploads.</p>
           </div>
           <label className="inline-flex items-center gap-2 bg-black text-white px-4 py-2 rounded-md cursor-pointer hover:bg-gray-800 transition">
             <span>Upload Images</span>
@@ -75,29 +88,86 @@ const ImageManager = () => {
           Total images: <span className="font-semibold">{totalCount}</span>
         </div>
 
-        {images.length === 0 ? (
-          <div className="mt-8 border border-dashed border-gray-300 rounded-lg p-8 text-center text-gray-500">
-            No images yet. Use the upload button to add some.
-          </div>
-        ) : (
-          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {images.map((image) => (
-              <div key={image.id} className="border border-gray-200 rounded-lg overflow-hidden shadow-sm">
-                <div className="aspect-[4/3] bg-gray-50">
-                  <img src={image.dataUrl} alt={image.name} className="h-full w-full object-cover" />
+        <div className="mt-8">
+          <h2 className="text-xl font-semibold">Carousel Images</h2>
+          {visibleSlides.length === 0 ? (
+            <div className="mt-4 border border-dashed border-gray-300 rounded-lg p-6 text-center text-gray-500">
+              No carousel images are visible.
+            </div>
+          ) : (
+            <div className="mt-4 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {visibleSlides.map((slide) => (
+                <div key={slide.src} className="border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+                  <div className="aspect-[4/3] bg-gray-50">
+                    <img src={slide.src} alt="Carousel" className="h-full w-full object-cover" />
+                  </div>
+                  <div className="flex items-center justify-between px-4 py-3">
+                    <div className="text-sm text-gray-700 truncate">{slide.src}</div>
+                    <button
+                      type="button"
+                      onClick={() => handleHideSlide(slide.src)}
+                      className="text-sm text-red-600 hover:text-red-700"
+                    >
+                      Delete
+                    </button>
+                  </div>
                 </div>
-                <div className="flex items-center justify-between px-4 py-3">
-                  <div className="text-sm text-gray-700 truncate">{image.name}</div>
-                  <button
-                    type="button"
-                    onClick={() => handleDelete(image.id)}
-                    className="text-sm text-red-600 hover:text-red-700"
-                  >
-                    Delete
-                  </button>
+              ))}
+            </div>
+          )}
+        </div>
+
+        <div className="mt-10">
+          <h2 className="text-xl font-semibold">Uploaded Images</h2>
+          {uploads.length === 0 ? (
+            <div className="mt-4 border border-dashed border-gray-300 rounded-lg p-6 text-center text-gray-500">
+              No images yet. Use the upload button to add some.
+            </div>
+          ) : (
+            <div className="mt-4 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {uploads.map((image) => (
+                <div key={image.id} className="border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+                  <div className="aspect-[4/3] bg-gray-50">
+                    <img src={image.dataUrl} alt={image.name} className="h-full w-full object-cover" />
+                  </div>
+                  <div className="flex items-center justify-between px-4 py-3">
+                    <div className="text-sm text-gray-700 truncate">{image.name}</div>
+                    <button
+                      type="button"
+                      onClick={() => handleDeleteUpload(image.id)}
+                      className="text-sm text-red-600 hover:text-red-700"
+                    >
+                      Delete
+                    </button>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
+          )}
+        </div>
+
+        {hiddenSlidesList.length > 0 && (
+          <div className="mt-10">
+            <h2 className="text-xl font-semibold">Deleted Carousel Images</h2>
+            <div className="mt-4 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {hiddenSlidesList.map((slide) => (
+                <div key={slide.src} className="border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+                  <div className="aspect-[4/3] bg-gray-50">
+                    <img src={slide.src} alt="Deleted" className="h-full w-full object-cover opacity-70" />
+                  </div>
+                  <div className="flex items-center justify-between px-4 py-3">
+                    <div className="text-sm text-gray-700 truncate">{slide.src}</div>
+                    <button
+                      type="button"
+                      onClick={() => handleRestoreSlide(slide.src)}
+                      className="text-sm text-green-600 hover:text-green-700"
+                    >
+                      Restore
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         )}
       </main>
