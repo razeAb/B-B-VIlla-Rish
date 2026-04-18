@@ -14,6 +14,7 @@ import BookingLinks from "./BookingLinks"; // ייבוא קישורי הזמנה
 import GoogleMaps from "./GoogleMapsTemp";
 import Footer2 from "./Footer2";
 import ImageManager from "./ImageManager";
+import PhotoBrowser from "./PhotoBrowser";
 import baseSlides from "./slidesData";
 import {
   buildCarouselSlides,
@@ -145,6 +146,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/manage-images" element={<ImageManager />} />
+        <Route path="/photo-browser" element={<PhotoBrowser />} />
       </Routes>
     </Router>
   );
