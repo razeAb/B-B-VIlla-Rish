@@ -3,7 +3,6 @@ const baseSlides = [
   { src: "/images/img3.jpg" },
   { src: "/images/img4.jpg" },
   { src: "/images/img5.jpg" },
-  { src: "/images/img6.jpeg" },
   { src: "/images/img8.jpeg" },
   { src: "/images/DSC_6810.jpg" },
   { src: "/images/DSC_6815.jpg" },
