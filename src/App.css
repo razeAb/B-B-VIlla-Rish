@@ -1,375 +1,1007 @@
-/* Global styles */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+:root {
+  --ink:#292d29;
+  --muted:#5d6159;
+  --accent:#ad583e;
+  --line:#e6e5df;
+  --cream:#faf9f6
+}
+* {
+  box-sizing:border-box
+}
+html {
+  scroll-behavior:smooth;
+  scroll-padding-top:100px
+}
 body {
-  margin: 0;
-  font-family: "Inter", sans-serif;
-  background-color: #fff;
-  color: #000;
+  margin:0;
+  background:var(--cream);
+  color:var(--ink);
+  font-family:Heebo,Arial,sans-serif;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased
+}
+button,input,select {
+  font:inherit
+}
+button,a,input,select {
+  -webkit-tap-highlight-color:transparent
+}
+button,a {
+  touch-action:manipulation
+}
+button {
+  cursor:pointer
+}
+a {
+  color:inherit;
+  text-decoration:none
+}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible {
+  outline:3px solid #ad583e;
+  outline-offset:5px
+}
+.villa-site h1,.villa-site h2,.villa-site h3,.villa-site p {
+  margin:0
+}
+.villa-site svg {
+  flex-shrink:0;
+  stroke-width:1.5
+}
+.site-header {
+  height:64px;
+  background:#fff;
+  border-bottom:1px solid var(--line)
+}
+.nav-inner {
+  max-width:1280px;
+  margin:auto;
+  height:100%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 40px
+}
+.wordmark {
+  direction:ltr;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  line-height:1.1
+}
+.wordmark>span {
+  font-family:Georgia,serif;
+  font-size:28px;
+  letter-spacing:2px
+}
+.wordmark small {
+  font-size:12px;
+  letter-spacing:3.2px;
+  margin-top:9px
+}
+.brand-dot {
+  color:var(--accent)
+}
+.nav-inner nav {
+  display:flex;
+  gap:38px;
+  font-size:16px;
+  height:100%;
+  align-items:center
+}
+.nav-inner nav a {
+  height:100%;
+  display:flex;
+  align-items:center;
+  position:relative
+}
+.nav-inner nav a.active:after {
+  content:"";
+  position:absolute;
+  height:2px;
+  background:var(--accent);
+  bottom:10px;
+  left:0;
+  right:0
+}
+.header-book {
+  display:flex;
+  gap:20px;
+  align-items:center;
+  border:1px solid #cfcfc5;
+  border-radius:7px;
+  padding:12px 19px;
+  font-size:15px
+}
+.page-shell {
+  max-width:1280px;
+  padding:0 40px;
+  margin:auto
+}
+.listing-heading {
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between
+}
+.villa-site h1 {
+  font-size:46px;
+  letter-spacing:-.5px;
+  font-weight:500;
+  line-height:1.25
+}
+.location-line {
+  display:flex;
+  align-items:center;
+  gap:7px;
+  font-size:14px;
+  margin-top:15px;
+  color:#646861
+}
+.location-line svg {
+  width:15px
+}
+.location-divider {
+  padding:0 8px;
+  color:#cecec6
+}
+.private-label {
+  color:#54705b
+}
+.listing-actions {
+  display:flex;
+  gap:23px;
+  margin-bottom:3px
+}
+.listing-actions button {
+  display:flex;
+  align-items:center;
+  gap:7px;
+  background:none;
+  border:0;
+  font-size:14px;
+  text-decoration:underline;
+  text-underline-offset:4px
+}
+.listing-actions svg {
+  width:16px
+}
+.share-notice {
+  font-size:14px;
+  color:var(--accent);
+  min-height:24px;
+  padding-top:5px
+}
+.photo-grid {
+  position:relative;
+  display:grid;
+  grid-template-columns:2.05fr 1fr 1fr;
+  grid-template-rows:265px 265px;
+  gap:8px;
+  direction:ltr;
+  border-radius:14px;
+  overflow:hidden
+}
+.photo-tile {
+  padding:0;
+  border:0;
+  overflow:hidden;
+  background:#e9e7df
+}
+.photo-tile img {
+  height:100%;
+  width:100%;
+  object-fit:cover;
+  transition:transform .5s
+}
+.photo-tile:hover img {
+  transform:scale(1.045)
+}
+.tile-0 {
+  grid-row:span 2
+}
+.photo-tag {
+  position:absolute;
+  top:20px;
+  left:20px;
+  background:#fffefaeb;
+  padding:10px 13px;
+  border-radius:5px;
+  direction:rtl;
+  font-size:14px;
+  display:flex;
+  align-items:center;
+  gap:7px
+}
+.photo-tag span,.status-dot {
+  width:6px;
+  height:6px;
+  display:inline-block;
+  background:#658060;
+  border-radius:50%
+}
+.all-photos {
+  position:absolute;
+  bottom:20px;
+  right:20px;
+  border:1px solid #eee;
+  background:white;
+  padding:11px 15px;
+  border-radius:6px;
+  display:flex;
+  align-items:center;
+  gap:9px;
+  direction:rtl;
+  font-size:14px
+}
+.all-photos span {
+  color:var(--muted);
+  font-size:13px
+}
+.content-layout {
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 340px;
+  gap:75px;
+  margin-top:42px;
+  align-items:start
+}
+.section-kicker {
+  color:var(--accent);
+  font-size:14px;
+  margin-bottom:10px
+}
+.villa-site h2 {
+  font-size:32px;
+  font-weight:500;
+  letter-spacing:-.3px;
+  line-height:1.4
+}
+.property-facts {
+  display:flex;
+  gap:22px;
+  font-size:14px;
+  margin:18px 0 26px
+}
+.property-facts span {
+  display:flex;
+  align-items:center;
+  gap:8px
+}
+.property-facts svg {
+  width:18px;
+  height:18px
+}
+.intro-section>p {
+  font-size:16px;
+  color:#6b6e66;
+  line-height:1.95;
+  margin-top:12px;
+  max-width:640px
+}
+.host-note {
+  display:flex;
+  align-items:center;
+  gap:14px;
+  margin-top:28px;
+  padding:20px 0;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line)
+}
+.host-monogram {
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  background:#eaeadd;
+  display:grid;
+  place-items:center;
+  font-family:Georgia,serif;
+  font-size:23px;
+  color:#687059
+}
+.host-note strong {
+  display:block;
+  font-size:14px;
+  font-weight:500;
+  margin-bottom:7px
+}
+.host-note span {
+  font-size:13px;
+  color:var(--muted)
+}
+.amenities-section {
+  padding:32px 0
+}
+.amenities-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:23px 25px;
+  margin-top:28px
+}
+.amenities-grid>div {
+  display:flex;
+  gap:13px;
+  align-items:center;
+  font-size:15px
+}
+.amenities-grid svg {
+  width:23px;
+  height:23px;
+  color:#68735d
+}
+.booking-card {
+  background:white;
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:25px;
+  box-shadow:0 9px 25px #292d2906;
+  position:sticky;
+  top:24px
+}
+.booking-kicker {
+  display:flex;
+  align-items:center;
+  gap:7px;
+  color:#6c745f;
+  font-size:13px;
+  margin-bottom:16px
+}
+.booking-card h2 {
+  font-size:30px
+}
+.booking-card>p {
+  font-size:14px;
+  color:var(--muted);
+  margin:8px 0 22px
+}
+.date-fields {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  border:1px solid #dcded6;
+  border-radius:6px 6px 0 0
+}
+.date-fields label {
+  padding:12px 10px;
+  min-width:0;
+  font-size:13px
+}
+.date-fields label+label {
+  border-right:1px solid #dcded6
+}
+.date-fields input {
+  display:block;
+  min-width:0;
+  width:100%;
+  border:0;
+  background:white;
+  color:#62675e;
+  font-size:14px;
+  margin-top:8px;
+  direction:ltr
+}
+.guest-field {
+  display:block;
+  border:1px solid #dcded6;
+  border-top:0;
+  border-radius:0 0 6px 6px;
+  padding:11px 10px;
+  font-size:13px
+}
+.guest-field select {
+  display:block;
+  width:100%;
+  border:0;
+  background:white;
+  margin-top:6px;
+  font-size:14px;
+  color:#62675e
+}
+.primary-button {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:30px;
+  width:100%;
+  border:0;
+  background:var(--accent);
+  color:white;
+  border-radius:6px;
+  padding:15px;
+  margin-top:15px;
+  font-size:15px
+}
+.primary-button:hover,.mobile-book a:hover {
+  background:#914830
+}
+.booking-help {
+  display:block;
+  text-align:center;
+  font-size:13px;
+  color:var(--muted);
+  margin:13px 0 21px
+}
+.booking-divider {
+  border-top:1px solid var(--line)
+}
+.direct-book {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  margin:18px 0;
+  font-size:14px;
+  text-decoration:underline;
+  text-underline-offset:4px
+}
+.phone-link {
+  display:flex;
+  align-items:center;
+  gap:8px;
+  justify-content:center;
+  font-size:14px
+}
+.phone-link span {
+  color:var(--muted);
+  font-size:14px
+}
+.booking-bottom {
+  font-size:13px;
+  display:flex;
+  gap:6px;
+  align-items:center;
+  justify-content:center;
+  color:#708067;
+  margin-top:21px
+}
+.experience-section {
+  padding:36px 0 52px;
+  border-top:1px solid var(--line);
+  margin-top:10px
+}
+.section-heading {
+  display:flex;
+  justify-content:space-between;
+  align-items:center
+}
+.section-heading>span {
+  font-size:14px;
+  color:var(--muted)
+}
+.experience-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+  margin-top:25px
+}
+.experience-image {
+  height:260px;
+  position:relative
+}
+.experience-image img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:9px
+}
+.experience-image>span {
+  position:absolute;
+  bottom:12px;
+  right:12px;
+  border-radius:50%;
+  background:#fffefa;
+  display:grid;
+  place-items:center;
+  width:34px;
+  height:34px
+}
+.experience-image svg {
+  width:19px;
+  height:19px
+}
+.experience-card h3 {
+  font-size:17px;
+  font-weight:500;
+  margin-top:18px
+}
+.experience-card p {
+  font-size:14px;
+  color:var(--muted);
+  margin-top:8px;
+  line-height:1.7
+}
+.location-section {
+  border-radius:12px;
+  overflow:hidden;
+  background:#efefe7;
+  display:grid;
+  grid-template-columns:1fr 1.4fr;
+  align-items:center;
+  gap:55px;
+  margin-bottom:60px
+}
+.location-section>div:last-child {
+  padding:35px 0 35px 45px
+}
+.location-section p {
+  font-size:15px;
+  color:var(--muted);
+  line-height:1.9;
+  margin-top:13px
+}
+.location-section a {
+  display:inline-flex;
+  gap:18px;
+  align-items:center;
+  font-size:14px;
+  border-bottom:1px solid #b2b5a7;
+  padding-bottom:5px;
+  margin-top:20px
+}
+.site-footer {
+  border-top:1px solid var(--line);
+  padding:36px 40px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:30px;
+  max-width:1280px;
+  margin:auto
+}
+.site-footer .wordmark {
+  align-items:flex-start
+}
+.site-footer .wordmark>span {
+  font-size:23px
+}
+.site-footer p {
+  font-size:14px;
+  color:var(--muted);
+  margin-top:14px
+}
+.footer-links {
+  display:flex;
+  gap:24px;
+  font-size:14px;
+  direction:ltr
+}
+.site-footer>small {
+  font-size:12px;
+  color:var(--muted)
+}
+.mobile-break,.mobile-book {
+  display:none
+}
+.skip-link {
+  position:fixed;
+  top:-100px;
+  z-index:10;
+  background:white;
+  padding:15px
+}
+.skip-link:focus {
+  top:5px
+}
+.gallery-dialog {
+  padding:20px;
+  border:0;
+  border-radius:12px;
+  background:#faf9f6;
+  width:min(1000px,94vw);
+  max-height:94dvh
+}
+.gallery-dialog::backdrop {
+  background:#161b18e8
+}
+.gallery-dialog>img {
+  width:100%;
+  height:70dvh;
+  object-fit:contain
+}
+.gallery-toolbar,.gallery-controls {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px
+}
+.gallery-toolbar {
+  padding-bottom:12px;
+  font-size:15px
+}
+.gallery-dialog button {
+  border:1px solid var(--line);
+  background:white;
+  border-radius:50%;
+  padding:10px;
+  font-size:20px
+}
+.gallery-controls {
+  justify-content:center;
+  padding-top:12px
+}
+@media(min-width:1400px) {
+  .photo-grid {
+    grid-template-rows:290px 290px
+  }
+}
+@media(max-width:1000px) {
+  .nav-inner nav {
+    gap:22px
+  }
+  .content-layout {
+    gap:30px;
+    grid-template-columns:minmax(0,1fr) 310px
+  }
+  .villa-site h1 {
+    font-size:32px
+  }
+  .photo-grid {
+    grid-template-rows:210px 210px
+  }
+  .property-facts {
+    gap:13px;
+    flex-wrap:wrap
+  }
+  .site-footer {
+    flex-wrap:wrap
+  }
+  .experience-image {
+    height:200px
+  }
+}
+@media(max-width:720px) {
+  html {
+    scroll-padding-top:20px
+  }
+  .site-header {
+    height:60px
+  }
+  .nav-inner {
+    padding:0 20px
+  }
+  .wordmark>span {
+    font-size:23px
+  }
+  .wordmark small {
+    font-size:12px;
+    letter-spacing:2.6px
+  }
+  .nav-inner nav {
+    display:none
+  }
+  .header-book {
+    padding:10px 12px;
+    font-size:14px;
+    gap:12px
+  }
+  .page-shell {
+    padding:0 20px
+  }
+  .villa-site h1 {
+    font-size:36px;
+    line-height:1.25;
+    letter-spacing:-.3px
+  }
+  .mobile-break {
+    display:block
+  }
+  .listing-heading {
+    display:block
+  }
+  .location-line {
+    font-size:14px;
+    flex-wrap:wrap;
+    gap:5px;
+    margin-top:12px
+  }
+  .location-divider,.private-label {
+    display:none
+  }
+  .listing-actions {
+    margin-top:17px;
+    gap:20px
+  }
+  .listing-actions button {
+    font-size:14px
+  }
+  .share-notice {
+    min-height:20px
+  }
+  .photo-grid {
+    grid-template-columns:1fr 1fr;
+    grid-template-rows:260px 125px;
+    gap:5px;
+    border-radius:10px
+  }
+  .tile-0 {
+    grid-column:span 2;
+    grid-row:span 1
+  }
+  .tile-3,.tile-4 {
+    display:none
+  }
+  .photo-tag {
+    top:12px;
+    left:12px;
+    font-size:12px;
+    padding:8px 10px
+  }
+  .all-photos {
+    bottom:12px;
+    right:12px;
+    font-size:13px;
+    padding:9px 10px
+  }
+  .content-layout {
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+    margin-top:30px
+  }
+  .property-content {
+    width:100%
+  }
+  .villa-site h2 {
+    font-size:27px
+  }
+  .property-facts {
+    font-size:14px;
+    gap:17px;
+    margin:17px 0 21px
+  }
+  .intro-section>p {
+    font-size:15px
+  }
+  .host-note span {
+    font-size:13px;
+    line-height:1.7;
+    display:block
+  }
+  .host-note strong {
+    line-height:1.6;
+    margin-bottom:3px
+  }
+  .host-monogram {
+    flex-shrink:0
+  }
+  .amenities-grid {
+    gap:22px 12px
+  }
+  .amenities-grid>div {
+    font-size:14px;
+    gap:10px
+  }
+  .amenities-grid svg {
+    width:21px
+  }
+  .booking-card {
+    position:static;
+    width:100%;
+    padding:23px;
+    margin-bottom:20px
+  }
+  .booking-card>p {
+    font-size:14px
+  }
+  .date-fields input {
+    font-size:16px
+  }
+  .guest-field select {
+    font-size:16px
+  }
+  .experience-section {
+    padding-top:30px
+  }
+  .section-heading {
+    display:block
+  }
+  .section-heading>span {
+    display:block;
+    margin-top:8px
+  }
+  .experience-grid {
+    grid-template-columns:1fr;
+    gap:28px
+  }
+  .experience-image {
+    height:230px
+  }
+  .experience-card h3 {
+    margin-top:13px
+  }
+  .location-section {
+    grid-template-columns:1fr;
+    gap:0;
+    margin-bottom:32px
+  }
+  .location-section>div:last-child {
+    padding:28px
+  }
+  .site-footer {
+    padding:30px 20px 110px;
+    gap:26px
+  }
+  .footer-links {
+    flex-wrap:wrap;
+    gap:20px
+  }
+  .site-footer>small {
+    width:100%
+  }
+  .mobile-book {
+    display:flex;
+    position:fixed;
+    z-index:5;
+    bottom:0;
+    left:0;
+    right:0;
+    justify-content:space-between;
+    align-items:center;
+    border-top:1px solid var(--line);
+    background:#fffffff5;
+    backdrop-filter:blur(12px);
+    padding:13px 20px calc(13px + env(safe-area-inset-bottom));
+    box-shadow:0 -3px 20px #00000005
+  }
+  .mobile-book>span {
+    font-size:14px
+  }
+  .mobile-book small {
+    display:block;
+    font-size:13px;
+    color:var(--muted);
+    margin-top:5px
+  }
+  .mobile-book a {
+    display:flex;
+    align-items:center;
+    gap:20px;
+    background:var(--accent);
+    color:white;
+    padding:13px 20px;
+    border-radius:6px;
+    font-size:14px
+  }
+  .gallery-dialog>img {
+    height:60dvh
+  }
+}
+@media(prefers-reduced-motion:reduce) {
+  html {
+    scroll-behavior:auto
+  }
+  * {
+    transition:none!important
+  }
 }
 
-h1,
-h2 {
-  font-weight: bold;
-  text-align: center;
-  margin: 20px 0;
+.nearby-section {
+  padding: 40px 0 52px;
+  border-top: 1px solid var(--line);
 }
-
-p {
-  line-height: 1.6;
-}
-
-/* Header styles */
-.booking-header {
-  padding: 4rem 2rem;
-  background-color: #ffffff;
-  text-align: center;
-}
-
-.booking-header input {
-  width: 100%;
-  max-width: 400px;
-}
-
-.booking-header button {
-  background-color: #bba168;
-  transition: background-color 0.3s ease-in-out;
-}
-
-.booking-header button:hover {
-  background-color: #d4a233;
-}
-
-/* Facilities Section */
-.facilities-section {
-  position: relative;
-  text-align: center;
-  background-color: #bba168;
-  padding: 50px;
-  border-radius: 10px;
-  background-image: url(../public/images/img50.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+.nearby-filters {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 26px;
 }
-.section-title {
-  font-size: 2rem; /* Adjust size for responsiveness */
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 20px;
-  color: black; /* Default black for the main text */
-}
-
-.section-title span {
-  color: #bba168; /* Gold color for the highlighted part */
-}
-/* Gallery Section */
-.gallery-section {
-  padding: 50px;
-  background-color: #dedede;
-  border-radius: 10px;
-  min-height: 400px;
+.nearby-filters button {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  gap: 9px;
+  padding: 11px 17px;
+  border: 1px solid var(--line);
+  border-radius: 30px;
+  background: white;
+  font-size:14px;
+  color: #62675e;
 }
-
-/* Slider Container Adjustments */
-.slider-container {
-  position: relative;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  overflow: visible;
-}
-
-/* Main Slide */
-.main-slide {
-  flex: 3;
-  position: relative;
-  height: 300px;
-  margin: 0 20px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.main-slide:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-}
-
-.main-image {
-  width: 100%;
-  height: 100%;
-  background-position: center;
-  background-size: cover;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-/* Side Images */
-.side-images {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-top: 20px;
-}
-
-.side-image {
-  width: 100px;
-  height: 80px;
-  background-position: center;
-  background-size: cover;
-  border-radius: 10px;
-  opacity: 0.7;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.side-image:hover {
-  transform: scale(1.1);
-  opacity: 1;
-}
-
-/* Arrows */
-.left-arrow {
-  position: absolute;
-  top: 50%;
-  left: 20px; /* Ensure the left arrow is on the left side */
-  transform: translateY(-50%);
-  width: 40px;
-  height: 40px;
-  background-color: #ffffff;
-  color: #bba168;
-  border-radius: 50%;
-  border: 2px solid #bba168;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  z-index: 10;
-  font-size: 18px;
-  transition: transform 0.3s ease, background-color 0.3s ease;
-}
-.right-arrow {
-  position: absolute;
-  top: 50%;
-  right: 20px; /* Ensure the right arrow is on the right side */
-  transform: translateY(-50%);
-  width: 40px;
-  height: 40px;
-  background-color: #ffffff;
-  color: #bba168;
-  border-radius: 50%;
-  border: 2px solid #bba168;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  z-index: 10;
-  font-size: 18px;
-  transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-.left-arrow:hover,
-.right-arrow:hover {
-  background-color: #bba168;
-  color: #ffffff;
-  transform: scale(1.1);
-}
-
-.left-arrow {
-  left: -50px;
-}
-
-.right-arrow {
-  right: -50px;
-}
-
-/* Carousel Adjustments */
-.react-multi-carousel-list {
-  padding: 0 10px;
-}
-
-.react-multi-carousel-track {
-  display: flex;
-  justify-content: center;
-  gap: 5px;
-}
-
-/* Card Styling */
-.card {
-  margin: 0 auto;
-  padding: 1.2rem;
-  width: 80%;
-  max-width: 280px;
-  background-color: #bba168;
-  border-radius: 10px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.card img {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 10px;
-}
-
-.card h2 {
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #ffffff;
-  margin-bottom: 0.5rem;
-}
-
-.card p {
-  font-size: 0.9rem;
-  color: #f1f1f1;
-  margin-bottom: 1rem;
-}
-
-.card button {
-  width: 100%;
-  padding: 0.5rem;
-  font-size: 0.9rem;
-  font-weight: bold;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-}
-
-.card button.bg-blue-500 {
-  background-color: black;
-}
-
-.card button.bg-blue-500:hover {
-  background-color: #0056b3;
-}
-
-/* Adjust the arrows for responsiveness */
-.react-multi-carousel-arrow--left {
-  left: -60px;
-}
-
-.react-multi-carousel-arrow--right {
-  right: -60px;
-}
-
-.react-multi-carousel-arrow:hover {
-  background-color: #bba168;
-  opacity: 0.8;
-}
-
-/* Things to Do */
-.things-to-do {
-  padding: 50px;
-  background-color: #fff;
-}
-
-/* Contact Section */
-.contact-section {
-  background-color: black;
+.nearby-filters button[aria-pressed="true"] {
+  background: var(--ink);
+  border-color: var(--ink);
   color: white;
-  padding: 50px;
-  text-align: center;
+}
+.nearby-filters button span { opacity: .65; font-size:13px; }
+.nearby-filters svg { width: 16px; height: 16px; }
+.villa-site .nearby-count { font-size:14px; color: var(--muted); margin: 20px 0 14px; }
+.nearby-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+.nearby-card { border: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: #fff; display: flex; flex-direction: column; }
+.nearby-image { height: 185px; position: relative; background: #e9ecdf; }
+.nearby-image img { width: 100%; height: 100%; object-fit: cover; }
+.nearby-image-fallback { height: 100%; display: grid; place-items: center; background: repeating-radial-gradient(ellipse at 10% 80%, transparent 0 24px, #bec6ae40 25px 26px, transparent 27px 45px), #e2e6d9; }
+.nearby-image-fallback svg { width: 42px; height: 42px; color: #68765a; }
+.nearby-category-icon { position: absolute; right: 14px; bottom: 14px; width: 32px; height: 32px; display: grid; place-items: center; border-radius: 50%; background: var(--cream); }
+.nearby-card-body { padding: 20px; display: flex; flex: 1; flex-direction: column; }
+.villa-site .nearby-card h3 { font-size: 17px; font-weight: 500; }
+.villa-site .nearby-card p { font-size:14px; line-height: 1.8; color: var(--muted); margin: 9px 0 20px; }
+.nearby-card-links { display: flex; justify-content: space-between; gap: 12px; margin-top: auto; padding-top: 14px; border-top: 1px solid var(--line); }
+.nearby-card-links a { display: inline-flex; align-items: center; gap: 8px; font-size:14px; color: var(--accent); }
+.nearby-card-links a:hover { text-decoration: underline; text-underline-offset: 4px; }
+@media(max-width: 900px) { .nearby-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media(max-width: 540px) {
+  .nearby-section { padding: 30px 0 36px; }
+  .nearby-grid { grid-template-columns: 1fr; gap: 18px; }
+  .nearby-filters { gap: 8px; }
+  .nearby-filters button { padding: 10px 12px; font-size:14px; gap: 7px; }
+  .nearby-image { height: 200px; }
 }
 
-/* Responsive Adjustments */
-@media only screen and (max-width: 768px) {
-  .gallery-section {
-    min-height: 300px;
-  }
+.villa-logo { display: block; width: 68px; height: 48px; object-fit: contain; border-radius: 4px; }
+.site-footer .villa-logo { width: 112px; height: 88px; }
+.booking-divider + .phone-link { margin-top: 20px; }
+.share-panel { margin: 20px 0 4px; padding: 20px; background: white; border: 1px solid var(--line); border-radius: 10px; max-width: 480px; margin-right: auto; }
+.share-panel-heading { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 15px; }
+.share-panel-heading strong { font-size:16px; font-weight: 500; }
+.share-panel-heading button { padding: 6px; border: 0; background: transparent; }
+.share-panel label { display: block; font-size:14px; color: var(--muted); margin-bottom: 7px; }
+.share-panel input { width: 100%; min-width: 0; padding: 10px; border: 1px solid var(--line); border-radius: 5px; font-size:15px; background: var(--cream); }
+.share-options { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
+.share-options a, .share-options button { display: inline-flex; align-items: center; gap: 8px; padding: 10px 12px; border: 1px solid var(--line); border-radius: 5px; background: white; font-size:14px; }
+.share-options button:first-child { color: white; background: var(--accent); border-color: var(--accent); }
+@media(max-width:720px) { .villa-logo { width: 62px; height: 44px; } }
 
-  .main-slide {
-    height: 250px;
-  }
+/* ---- Design refresh ---- */
+.villa-site h1,.villa-site h2,.villa-site h3,.villa-logo-text { font-family:"Frank Ruhl Libre",Georgia,serif }
+.villa-site h3 { font-size:20px }
+.section-kicker { font-weight:500; letter-spacing:.2px }
 
-  .side-images {
-    gap: 10px;
-  }
+.wordmark { flex-direction:row; gap:10px }
+.villa-mark { height:44px; width:auto; display:block }
+.wordmark-text { font-family:"Frank Ruhl Libre",Georgia,serif; font-size:20px; letter-spacing:2.5px; line-height:1; display:flex; flex-direction:column; align-items:flex-start }
+.wordmark-text small { font-family:Heebo,sans-serif; font-size:12px; letter-spacing:0; color:#9a7b45; margin-top:5px; direction:rtl }
 
-  .side-image {
-    width: 80px;
-    height: 60px;
-  }
+.listing-heading { padding-top:36px }
+.photo-hero { position:relative; margin-top:6px }
+.photo-grid { border-radius:16px }
 
-  .left-arrow {
-    left: 10px; /* Adjust for smaller screens */
-  }
+.content-layout { gap:64px; grid-template-columns:minmax(0,1fr) 360px }
+.booking-card { top:32px; padding:28px }
 
-  .right-arrow {
-    right: 10px; /* Adjust for smaller screens */
-  }
+.experience-section { background:#f1ede3; box-shadow:0 0 0 100vmax #f1ede3; clip-path:inset(0 -100vmax); border-top:0; padding:60px 0 64px; margin-top:40px }
+.experience-image img { border-radius:12px }
+
+.reviews-section { padding:48px 0 44px }
+.reviews-links { display:flex; flex-wrap:wrap; gap:12px 22px }
+.reviews-links a { display:inline-flex; align-items:center; gap:7px; color:var(--accent); font-size:15px }
+.reviews-links a:hover { text-decoration:underline; text-underline-offset:4px }
+.reviews-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:22px; margin-top:28px }
+.review-card { margin:0; background:#fff; border:1px solid var(--line); border-radius:12px; padding:24px }
+.review-card blockquote { margin:0; font-size:16px; line-height:1.8 }
+.review-card figcaption { margin-top:16px; font-weight:500; display:flex; justify-content:space-between; gap:12px }
+.review-card figcaption span { color:var(--muted); font-weight:400; font-size:14px }
+
+.nearby-image img { filter:saturate(.88) contrast(1.04) sepia(.06) }
+.nearby-image:after { content:""; position:absolute; inset:0; background:linear-gradient(to top,#292d2926,transparent 45%); pointer-events:none }
+.nearby-category-icon { z-index:1 }
+
+.location-section { margin-top:12px }
+.location-map { align-self:stretch; min-height:320px; background:#e2e6d9 }
+.location-map iframe { display:block; width:100%; height:100%; min-height:320px; border:0; filter:saturate(.75) }
+
+.site-footer { max-width:none; margin:0; border-top:0; background:var(--ink); color:#eceae2; padding:48px max(40px,calc((100% - 1200px) / 2)) }
+.site-footer .villa-logo { width:auto; height:130px; border-radius:0 }
+.site-footer p,.site-footer>small { color:#b8bbb0 }
+.site-footer .footer-links a:hover { color:#d9b77a }
+
+@media(max-width:1000px) {
+  .content-layout { grid-template-columns:minmax(0,1fr) 320px; gap:32px }
+  .reviews-grid { grid-template-columns:1fr }
 }
-
-@media only screen and (max-width: 600px) {
-  .gallery-section {
-    min-height: 250px;
-  }
-
-  .main-slide {
-    height: 200px;
-  }
-
-  .side-images {
-    gap: 8px;
-  }
-
-  .side-image {
-    width: 70px;
-    height: 50px;
-  }
-
-  .left-arrow,
-  .right-arrow {
-    width: 30px;
-    height: 30px;
-    left: -30px;
-    right: -30px;
-  }
-}
-
-@media only screen and (max-width: 480px) {
-  .gallery-section {
-    min-height: 200px;
-  }
-
-  .main-slide {
-    height: 150px;
-  }
-
-  .side-images {
-    gap: 5px;
-  }
-
-  .side-image {
-    width: 60px;
-    height: 45px;
-  }
-
-  .left-arrow {
-    left: 5px; /* Tighter spacing for very small screens */
-    margin-right: 100px;
-  }
-  .right-arrow {
-    right: 5px; /* Tighter spacing for very small screens */
-    margin-left: 350px;
-  }
-
-  @media (max-width: 640px) {
-    .header {
-      font-size: 1.75rem; /* Equivalent to text-2xl */
-    }
-  }
+@media(max-width:720px) {
+  .villa-mark { height:38px }
+  .wordmark-text { font-size:17px; letter-spacing:2px }
+  .listing-heading { padding-top:24px }
+  .photo-grid { display:flex; height:300px; margin:0 -20px; padding:0 20px; gap:8px; direction:rtl; overflow-x:auto; scroll-snap-type:x mandatory; scroll-padding:0 20px; border-radius:0; scrollbar-width:none }
+  .photo-grid::-webkit-scrollbar { display:none }
+  .photo-tile { flex:0 0 86%; scroll-snap-align:start; border-radius:12px }
+  .tile-3,.tile-4 { display:block }
+  .photo-tag { top:12px; left:auto; right:12px }
+  .all-photos { right:auto; left:12px }
+  .property-content { display:contents }
+  .intro-section { order:1 }
+  .booking-card { order:2; margin:8px 0 0 }
+  .amenities-section { order:3 }
+  .experience-section { padding:40px 0 44px }
+  .location-map,.location-map iframe { min-height:240px }
+  .site-footer { padding:36px 20px 120px }
+  .site-footer .villa-logo { height:110px }
 }
