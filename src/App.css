@@ -1005,3 +1005,49 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible {
   .site-footer { padding:36px 20px 120px }
   .site-footer .villa-logo { height:110px }
 }
+
+/* ---- Spa Rish ---- */
+.spa-section { --spa-bg:#1d2a2f; --spa-gold:#d9b77a; background:var(--spa-bg); box-shadow:0 0 0 100vmax var(--spa-bg); clip-path:inset(0 -100vmax); color:#eceae2; padding:68px 0 64px }
+.spa-section .section-kicker { color:var(--spa-gold) }
+.spa-intro { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:48px; align-items:end }
+.spa-intro h2 { color:#fffdf7 }
+.spa-intro p { color:#b9c2c0; font-size:16px; line-height:1.8; max-width:460px }
+.spa-mosaic { display:grid; grid-template-columns:2fr 1fr 1fr; grid-template-rows:230px 230px; gap:10px; margin-top:32px }
+.spa-tile { margin:0; overflow:hidden; border-radius:12px; background:#2a3a40 }
+.spa-tile img { display:block; width:100%; height:100%; object-fit:cover; transition:transform .6s ease }
+.spa-tile:hover img { transform:scale(1.04) }
+.spa-tile-0 { grid-row:span 2 }
+.spa-packages { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; margin-top:28px }
+.spa-package { border:1px solid #ffffff1f; border-radius:12px; padding:22px; background:#ffffff08; display:flex; flex-direction:column }
+.spa-package-type { font-size:13px; color:var(--spa-gold) }
+.spa-section .spa-package h3 { color:#fffdf7; font-size:22px; margin-top:4px }
+.spa-package p { color:#b9c2c0; font-size:14px; line-height:1.7; margin-top:6px; flex:1 }
+.spa-price { margin-top:16px; font-size:14px; color:#b9c2c0 }
+.spa-price strong { font-size:22px; font-weight:500; color:#fffdf7 }
+.spa-cta { display:flex; justify-content:space-between; align-items:center; gap:24px; margin-top:28px; padding-top:28px; border-top:1px solid #ffffff1f }
+.spa-perk { display:flex; align-items:center; gap:14px }
+.spa-perk strong { font-family:"Frank Ruhl Libre",Georgia,serif; font-size:40px; font-weight:500; color:var(--spa-gold); line-height:1 }
+.spa-perk span { display:flex; flex-direction:column; font-size:16px }
+.spa-perk small { font-size:13px; color:#b9c2c0 }
+.spa-cta-links { display:flex; align-items:center; gap:22px }
+.spa-button { display:inline-flex; align-items:center; gap:8px; background:var(--spa-gold); color:#1d2a2f; font-weight:500; padding:13px 24px; border-radius:8px; transition:background .2s }
+.spa-button:hover { background:#e6c78f }
+.spa-secondary { display:inline-flex; align-items:center; gap:7px; color:#b9c2c0; font-size:14px }
+.spa-secondary:hover { color:#fffdf7 }
+.spa-button:focus-visible,.spa-secondary:focus-visible { outline:2px solid var(--spa-gold); outline-offset:3px }
+
+@media(max-width:1000px) {
+  .spa-mosaic { grid-template-rows:180px 180px }
+  .spa-packages { grid-template-columns:1fr }
+}
+@media(max-width:720px) {
+  .spa-section { padding:44px 0 40px }
+  .spa-intro { grid-template-columns:1fr; gap:10px }
+  .spa-mosaic { display:flex; height:280px; margin:24px -20px 0; padding:0 20px; gap:8px; overflow-x:auto; scroll-snap-type:x mandatory; scroll-padding:0 20px; scrollbar-width:none }
+  .spa-mosaic::-webkit-scrollbar { display:none }
+  .spa-tile { flex:0 0 82%; scroll-snap-align:start }
+  .spa-cta { flex-direction:column; align-items:stretch }
+  .spa-cta-links { justify-content:space-between }
+  .spa-button { flex:1; justify-content:center }
+}
+@media(prefers-reduced-motion:reduce) { .spa-tile img { transition:none } }

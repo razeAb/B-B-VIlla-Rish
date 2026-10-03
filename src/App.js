@@ -6,6 +6,7 @@ import ImageManager from "./ImageManager";
 import PhotoBrowser from "./PhotoBrowser";
 import NearbyGuide from "./NearbyGuide";
 import Reviews from "./Reviews";
+import SpaSection from "./SpaSection";
 import baseSlides from "./slidesData";
 import { buildCarouselSlides, IMAGES_UPDATED_EVENT, readAddedImages, readDeletedImages } from "./imageStorage";
 import "./App.css";
@@ -52,7 +53,7 @@ function Home() {
     <a className="skip-link" href="#about">דלגו לתוכן</a>
     <header className="site-header"><div className="nav-inner">
       <a className="wordmark" href="/" aria-label="Villa Rish — עמוד הבית"><img className="villa-mark" src="/images/logo-mark.png" alt="" /><span className="wordmark-text">VILLA RISH<small>אירוח מלכים</small></span></a>
-      <nav aria-label="ניווט ראשי"><a className="active" href="#about">הווילה</a><a href="#amenities">מה מחכה לכם</a><a href="#experience">החוויה</a><a href="#nearby">בסביבה</a></nav>
+      <nav aria-label="ניווט ראשי"><a className="active" href="#about">הווילה</a><a href="#amenities">מה מחכה לכם</a><a href="#experience">החוויה</a><a href="#spa">הספא</a><a href="#nearby">בסביבה</a></nav>
     </div></header>
     <main className="page-shell">
       <section className="listing-heading"><div><h1>קצת רחוק מהשגרה.<br className="mobile-break" /> הכי קרוב לשלווה.</h1><div className="location-line"><FiMapPin /><span>וילה ריש & ספא · ירכא, הגליל המערבי</span><span className="location-divider">|</span><span className="private-label">כל המקום, רק שלכם</span></div></div>
@@ -98,6 +99,7 @@ function Home() {
         </form><span className="booking-help">בדיקת זמינות בוואטסאפ · ללא התחייבות</span><div className="booking-divider" /><a className="phone-link" href="tel:+972506290202"><FiPhone /> <bdi>050-629-0202</bdi><span>נדבר?</span></a><div className="booking-bottom"><FiCheck /> הווילה כולה לרשותכם, בפרטיות מלאה</div></aside>
       </div>
       <section id="experience" className="experience-section"><div className="section-kicker">פשוט להיות כאן</div><div className="section-heading"><h2>לכל רגע, המקום שלו.</h2><span>פחות תוכניות. יותר רגעים יחד.</span></div><div className="experience-grid">{[["/images/DSC_6810.jpg", TbPool, "להתחיל את היום במים", "בריכה פרטית ומחוממת, בכל עונות השנה."], ["/images/DSC_6823.jpg", TbMassage, "לתת לשגרה לחכות", "חמאם טורקי, ג׳קוזי ותפריט עיסויים אישי."], ["/images/img42.jpg", FiSun, "להישאר עוד קצת בחוץ", "קפה בגינה, ארוחה יחד והאוויר של הגליל."]].map(([src, Icon, title, desc]) => <article className="experience-card" key={src}><div className="experience-image"><img src={src} alt={title} loading="lazy" /><span><Icon /></span></div><h3>{title}</h3><p>{desc}</p></article>)}</div></section>
+      <SpaSection />
       <Reviews />
       <NearbyGuide />
       <section id="location" className="location-section"><div className="location-map"><iframe title="מפה — וילה ריש, ירכא" src="https://www.google.com/maps/embed?origin=mfe&pb=!1m3!2m1!1s32.960784,35.218707!6i14!3m1!1siw!5m1!1siw" loading="lazy" referrerPolicy="no-referrer-when-downgrade" /></div><div><div className="section-kicker">המקום שבו נפגשים</div><h2>הלב של הגליל. הקצב שלכם.</h2><p>בכפר ירכא מחכים לכם אירוח דרוזי חם, טעמים מקומיים ונקודת מוצא לטיולים בגליל המערבי.</p><a href="https://www.google.com/maps/dir/?api=1&destination=32.960784,35.218707" target="_blank" rel="noreferrer">איך מגיעים אלינו <FiArrowUpLeft /></a></div></section>
