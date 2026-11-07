@@ -48,11 +48,6 @@ const imageManifest = [
     "bytes": 527714
   },
   {
-    "fileName": "img3.jpg",
-    "src": "/images/img3.jpg",
-    "bytes": 644374
-  },
-  {
     "fileName": "img4.jpg",
     "src": "/images/img4.jpg",
     "bytes": 328734
@@ -61,41 +56,6 @@ const imageManifest = [
     "fileName": "img5.jpg",
     "src": "/images/img5.jpg",
     "bytes": 321313
-  },
-  {
-    "fileName": "img6.jpeg",
-    "src": "/images/img6.jpeg",
-    "bytes": 315968
-  },
-  {
-    "fileName": "img8.jpeg",
-    "src": "/images/img8.jpeg",
-    "bytes": 349664
-  },
-  {
-    "fileName": "img9.jpg",
-    "src": "/images/img9.jpg",
-    "bytes": 469532
-  },
-  {
-    "fileName": "img10.jpg",
-    "src": "/images/img10.jpg",
-    "bytes": 270591
-  },
-  {
-    "fileName": "img11.jpeg",
-    "src": "/images/img11.jpeg",
-    "bytes": 576402
-  },
-  {
-    "fileName": "img12.jpeg",
-    "src": "/images/img12.jpeg",
-    "bytes": 176156
-  },
-  {
-    "fileName": "img13.jpeg",
-    "src": "/images/img13.jpeg",
-    "bytes": 315968
   },
   {
     "fileName": "img14.jpg",
@@ -113,11 +73,6 @@ const imageManifest = [
     "bytes": 410990
   },
   {
-    "fileName": "img17.jpeg",
-    "src": "/images/img17.jpeg",
-    "bytes": 331558
-  },
-  {
     "fileName": "img18.jpg",
     "src": "/images/img18.jpg",
     "bytes": 318054
@@ -133,11 +88,6 @@ const imageManifest = [
     "bytes": 191103
   },
   {
-    "fileName": "img21.jpg",
-    "src": "/images/img21.jpg",
-    "bytes": 296338
-  },
-  {
     "fileName": "img22.jpg",
     "src": "/images/img22.jpg",
     "bytes": 462175
@@ -148,11 +98,6 @@ const imageManifest = [
     "bytes": 463558
   },
   {
-    "fileName": "img24.jpg",
-    "src": "/images/img24.jpg",
-    "bytes": 211993
-  },
-  {
     "fileName": "img25.jpg",
     "src": "/images/img25.jpg",
     "bytes": 438731
@@ -161,11 +106,6 @@ const imageManifest = [
     "fileName": "img26.jpg",
     "src": "/images/img26.jpg",
     "bytes": 342408
-  },
-  {
-    "fileName": "img27.jpg",
-    "src": "/images/img27.jpg",
-    "bytes": 175011
   },
   {
     "fileName": "img28.jpg",
@@ -183,49 +123,14 @@ const imageManifest = [
     "bytes": 271497
   },
   {
-    "fileName": "img31.jpeg",
-    "src": "/images/img31.jpeg",
-    "bytes": 391126
-  },
-  {
-    "fileName": "img32.jpg",
-    "src": "/images/img32.jpg",
-    "bytes": 313481
-  },
-  {
     "fileName": "img34.jpg",
     "src": "/images/img34.jpg",
     "bytes": 544921
   },
   {
-    "fileName": "img35.jpg",
-    "src": "/images/img35.jpg",
-    "bytes": 643503
-  },
-  {
-    "fileName": "img36.jpg",
-    "src": "/images/img36.jpg",
-    "bytes": 353639
-  },
-  {
-    "fileName": "img37.jpg",
-    "src": "/images/img37.jpg",
-    "bytes": 232160
-  },
-  {
     "fileName": "img38.jpg",
     "src": "/images/img38.jpg",
     "bytes": 299373
-  },
-  {
-    "fileName": "img39.jpg",
-    "src": "/images/img39.jpg",
-    "bytes": 353639
-  },
-  {
-    "fileName": "img40.jpg",
-    "src": "/images/img40.jpg",
-    "bytes": 375013
   },
   {
     "fileName": "img42.jpg",
@@ -243,29 +148,29 @@ const imageManifest = [
     "bytes": 262251
   },
   {
-    "fileName": "img47.jpg",
-    "src": "/images/img47.jpg",
-    "bytes": 295854
-  },
-  {
-    "fileName": "img48.jpg",
-    "src": "/images/img48.jpg",
-    "bytes": 299373
-  },
-  {
     "fileName": "img49.jpg",
     "src": "/images/img49.jpg",
     "bytes": 281243
   },
   {
-    "fileName": "img50.jpg",
-    "src": "/images/img50.jpg",
-    "bytes": 464734
-  },
-  {
     "fileName": "img51.jpeg",
     "src": "/images/img51.jpeg",
     "bytes": 25359
+  },
+  {
+    "fileName": "logo-mark.png",
+    "src": "/images/logo-mark.png",
+    "bytes": 65579
+  },
+  {
+    "fileName": "logo-on-dark.png",
+    "src": "/images/logo-on-dark.png",
+    "bytes": 91764
+  },
+  {
+    "fileName": "logo.png",
+    "src": "/images/logo.png",
+    "bytes": 91133
   },
   {
     "fileName": "supermarket.jpeg",
