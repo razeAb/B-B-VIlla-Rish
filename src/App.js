@@ -11,7 +11,7 @@ import baseSlides from "./slidesData";
 import { buildCarouselSlides, IMAGES_UPDATED_EVENT, readAddedImages, readDeletedImages } from "./imageStorage";
 import "./App.css";
 const amenities = [[TbPool, "בריכה פרטית מחוממת"], [TbBath, "ג׳קוזי וחמאם טורקי"], [TbBed, "4 חדרי שינה זוגיים"], [FiCoffee, "מטבח מאובזר"], [FiWifi, "Wi-Fi חופשי"], [FiZap, "טעינה לרכב חשמלי"], [FiSun, "גינה ופינת מנגל"], [FiHome, "ממ״ד צמוד"]];
-const featured = ["/images/DSC_6815.jpg", "/images/img43.jpg", "/images/img22.jpg", "/images/DSC_6821.jpg", "/images/img1.jpg"];
+const featured = ["/images/DSC_6815.jpg", "/images/img43.jpg", "/images/img72.jpg", "/images/DSC_6821.jpg", "/images/img1.jpg"];
 function Home() {
   const [slides, setSlides] = useState(baseSlides);
   const [photo, setPhoto] = useState(0);

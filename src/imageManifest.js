@@ -73,49 +73,14 @@ const imageManifest = [
     "bytes": 410990
   },
   {
-    "fileName": "img18.jpg",
-    "src": "/images/img18.jpg",
-    "bytes": 318054
-  },
-  {
     "fileName": "img19.jpg",
     "src": "/images/img19.jpg",
     "bytes": 145595
   },
   {
-    "fileName": "img20.jpg",
-    "src": "/images/img20.jpg",
-    "bytes": 191103
-  },
-  {
-    "fileName": "img22.jpg",
-    "src": "/images/img22.jpg",
-    "bytes": 462175
-  },
-  {
-    "fileName": "img23.jpg",
-    "src": "/images/img23.jpg",
-    "bytes": 463558
-  },
-  {
-    "fileName": "img25.jpg",
-    "src": "/images/img25.jpg",
-    "bytes": 438731
-  },
-  {
-    "fileName": "img26.jpg",
-    "src": "/images/img26.jpg",
-    "bytes": 342408
-  },
-  {
     "fileName": "img28.jpg",
     "src": "/images/img28.jpg",
     "bytes": 201861
-  },
-  {
-    "fileName": "img29.jpg",
-    "src": "/images/img29.jpg",
-    "bytes": 205401
   },
   {
     "fileName": "img30.jpg",
@@ -156,6 +121,186 @@ const imageManifest = [
     "fileName": "img51.jpeg",
     "src": "/images/img51.jpeg",
     "bytes": 25359
+  },
+  {
+    "fileName": "img52.jpg",
+    "src": "/images/img52.jpg",
+    "bytes": 525056
+  },
+  {
+    "fileName": "img53.jpg",
+    "src": "/images/img53.jpg",
+    "bytes": 322571
+  },
+  {
+    "fileName": "img54.jpg",
+    "src": "/images/img54.jpg",
+    "bytes": 269247
+  },
+  {
+    "fileName": "img55.jpg",
+    "src": "/images/img55.jpg",
+    "bytes": 222339
+  },
+  {
+    "fileName": "img56.jpg",
+    "src": "/images/img56.jpg",
+    "bytes": 262048
+  },
+  {
+    "fileName": "img57.jpg",
+    "src": "/images/img57.jpg",
+    "bytes": 236557
+  },
+  {
+    "fileName": "img58.jpg",
+    "src": "/images/img58.jpg",
+    "bytes": 162857
+  },
+  {
+    "fileName": "img59.jpg",
+    "src": "/images/img59.jpg",
+    "bytes": 439915
+  },
+  {
+    "fileName": "img60.jpg",
+    "src": "/images/img60.jpg",
+    "bytes": 269497
+  },
+  {
+    "fileName": "img61.jpg",
+    "src": "/images/img61.jpg",
+    "bytes": 281577
+  },
+  {
+    "fileName": "img62.jpg",
+    "src": "/images/img62.jpg",
+    "bytes": 218602
+  },
+  {
+    "fileName": "img63.jpg",
+    "src": "/images/img63.jpg",
+    "bytes": 126525
+  },
+  {
+    "fileName": "img64.jpg",
+    "src": "/images/img64.jpg",
+    "bytes": 316640
+  },
+  {
+    "fileName": "img65.jpg",
+    "src": "/images/img65.jpg",
+    "bytes": 185804
+  },
+  {
+    "fileName": "img66.jpg",
+    "src": "/images/img66.jpg",
+    "bytes": 253768
+  },
+  {
+    "fileName": "img67.jpg",
+    "src": "/images/img67.jpg",
+    "bytes": 272668
+  },
+  {
+    "fileName": "img68.jpg",
+    "src": "/images/img68.jpg",
+    "bytes": 177301
+  },
+  {
+    "fileName": "img69.jpg",
+    "src": "/images/img69.jpg",
+    "bytes": 260018
+  },
+  {
+    "fileName": "img70.jpg",
+    "src": "/images/img70.jpg",
+    "bytes": 206044
+  },
+  {
+    "fileName": "img71.jpg",
+    "src": "/images/img71.jpg",
+    "bytes": 272437
+  },
+  {
+    "fileName": "img72.jpg",
+    "src": "/images/img72.jpg",
+    "bytes": 231937
+  },
+  {
+    "fileName": "img73.jpg",
+    "src": "/images/img73.jpg",
+    "bytes": 221597
+  },
+  {
+    "fileName": "img74.jpg",
+    "src": "/images/img74.jpg",
+    "bytes": 240848
+  },
+  {
+    "fileName": "img75.jpg",
+    "src": "/images/img75.jpg",
+    "bytes": 203876
+  },
+  {
+    "fileName": "img76.jpg",
+    "src": "/images/img76.jpg",
+    "bytes": 296135
+  },
+  {
+    "fileName": "img77.jpg",
+    "src": "/images/img77.jpg",
+    "bytes": 218189
+  },
+  {
+    "fileName": "img78.jpg",
+    "src": "/images/img78.jpg",
+    "bytes": 261388
+  },
+  {
+    "fileName": "img79.jpg",
+    "src": "/images/img79.jpg",
+    "bytes": 206528
+  },
+  {
+    "fileName": "img80.jpg",
+    "src": "/images/img80.jpg",
+    "bytes": 552905
+  },
+  {
+    "fileName": "img81.jpg",
+    "src": "/images/img81.jpg",
+    "bytes": 362098
+  },
+  {
+    "fileName": "img82.jpg",
+    "src": "/images/img82.jpg",
+    "bytes": 310822
+  },
+  {
+    "fileName": "img83.jpg",
+    "src": "/images/img83.jpg",
+    "bytes": 226609
+  },
+  {
+    "fileName": "img84.jpg",
+    "src": "/images/img84.jpg",
+    "bytes": 260392
+  },
+  {
+    "fileName": "img85.jpg",
+    "src": "/images/img85.jpg",
+    "bytes": 298906
+  },
+  {
+    "fileName": "img86.jpg",
+    "src": "/images/img86.jpg",
+    "bytes": 614972
+  },
+  {
+    "fileName": "img87.jpg",
+    "src": "/images/img87.jpg",
+    "bytes": 454950
   },
   {
     "fileName": "logo-mark.png",
